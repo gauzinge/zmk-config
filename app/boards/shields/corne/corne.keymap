@@ -13,14 +13,17 @@
 #include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
 
-/*layers and shortcuts*/
-#define XXX &none
-#define ___ &trans
-
 #define DEF 0
 #define NAV 1
 #define SYM 2
 #define SYS 3
+
+#include "combos.dtsi"  // requires layer aliases
+#include "extra_keys.h"
+
+/*layers and shortcuts*/
+#define XXX &none
+#define ___ &trans
 
 /* Global settings */
 
