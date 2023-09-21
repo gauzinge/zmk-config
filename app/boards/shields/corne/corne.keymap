@@ -65,28 +65,6 @@ MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
 MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
 MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
-/* left-hand HRMs */
-
-/*ZMK_BEHAVIOR(hml, hold_tap,*/
-    /*flavor = "balanced";*/
-    /*tapping-term-ms = <280>;*/
-    /*quick-tap-ms = <175>;                // repeat on tap-into-hold*/
-    /*global-quick-tap-ms = <150>;         // requires PR #1387*/
-    /*bindings = <&kp>, <&kp>;*/
-    /*hold-trigger-key-positions = <KEYS_R THUMBS>;*/
-    /*hold-trigger-on-release;             // delay positional check until key-release*/
-/*)*/
-
-/*[> right-hand HRMs <]*/
-/*ZMK_BEHAVIOR(hmr, hold_tap,*/
-    /*flavor = "balanced";*/
-        /*tapping-term-ms = <280>;*/
-    /*quick-tap-ms = <175>;                // repeat on tap-into-hold*/
-    /*global-quick-tap-ms = <150>;         // requires PR #1387*/
-    /*bindings = <&kp>, <&kp>;*/
-    /*hold-trigger-key-positions = <KEYS_L THUMBS>;*/
-    /*hold-trigger-on-release;             // delay positional check until key-release*/
-
 
 // tap: backspace | shift + tap: delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
@@ -137,10 +115,10 @@ ZMK_BEHAVIOR(uc_shift, macro,
 )
 
 // Alt+Tab swapper, requires PR #1366
-ZMK_BEHAVIOR(swapper, tri_state,
-    bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-    ignored-key-positions = <LT2>;
-)
+/*ZMK_BEHAVIOR(swapper, tri_state,*/
+    /*bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;*/
+    /*ignored-key-positions = <LT2>;*/
+/*)*/
 
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
