@@ -67,10 +67,10 @@ MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
 
 // tap: backspace | shift + tap: delete | hold: num layer
-ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&lt NUM BSPC>, <&kp DEL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+/*ZMK_BEHAVIOR(bs_del_num, mod_morph,*/
+    /*bindings = <&lt NUM BSPC>, <&kp DEL>;*/
+    /*mods = <(MOD_LSFT|MOD_RSFT)>;*/
+/*)*/
 
 /* Caps-word, num-word */
 
