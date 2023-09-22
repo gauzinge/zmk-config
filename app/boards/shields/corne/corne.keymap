@@ -70,13 +70,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 
 // tap: backspace | shift + tap: delete | hold: num layer
-/*ZMK_BEHAVIOR(bs_del_num, mod_morph,*/
-    /*bindings = <&lt NUM BSPC>, <&kp DEL>;*/
-    /*mods = <(MOD_LSFT|MOD_RSFT)>;*/
-/*)*/
+ZMK_BEHAVIOR(bs_del_num, mod_morph,
+    bindings = <&lt NUM BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
 
 /* Caps-word, num-word */
-
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
 ZMK_BEHAVIOR(smart_shft, mod_morph,
     bindings = <&sk LSHFT>, <&caps_word>;
@@ -140,7 +139,7 @@ ZMK_LAYER(default,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp LCTRL         &kp Z         &kp X         &kp C         &kp V        &kp B             &kp N         &kp M       &kp COMMA      &kp DOT      &kp FSLH      &kp LALT
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                   &kp LSHIFT    &lt NAV BSPC    &kp RET           &kp SPACE    &lt NUM DEL  &smart_shft
+                                                   &kp LSHIFT    &lt NAV BSPC    &kp RET           &kp SPACE    &bs_del_num   &smart_shft
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -164,7 +163,7 @@ ZMK_LAYER(num,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp LCTRL    &kp EQUAL       &kp MINUS    &kp PLUS       &kp LBKT     &kp LBRC          &kp RBRC      &kp LBKT      &kp COMMA      &kp DOT      &kp BSLH      &kp LALT
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                   &kp LSHIFT         ___        &kp RET           &kp SPACE         ___      &smart_shft
+                                                   &kp LSHIFT         ___        &kp RET           &kp SPACE       ___       &smart_shft
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
