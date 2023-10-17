@@ -51,18 +51,37 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RM5  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs
 
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
-    ZMK_BEHAVIOR(NAME, hold_tap, \
-        flavor = "balanced"; \
-        tapping-term-ms = <280>; \
-        quick-tap-ms = <QUICK_TAP_MS>; \
-        /*global-quick-tap-ms = <150>; \*/
-        bindings = <HOLD>, <TAP>; \
-        hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
-    )
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
+/* left-hand HRMs */
+ZMK_BEHAVIOR(hml, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
+    require-prior-idle-ms = <150>;
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;             // delay positional check until key-release
+)
+/* right-hand HRMs */
+ZMK_BEHAVIOR(hmr, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
+    require-prior-idle-ms = <150>;
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;             // delay positional check until key-release
+)
+/*#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \*/
+    /*ZMK_BEHAVIOR(NAME, hold_tap, \*/
+        /*flavor = "balanced"; \*/
+        /*tapping-term-ms = <280>; \*/
+        /*quick-tap-ms = <QUICK_TAP_MS>; \*/
+        /*bindings = <HOLD>, <TAP>; \*/
+        /*hold-trigger-key-positions = <TRIGGER_POS>; \*/
+        /*hold-trigger-on-release; \*/
+    /*)*/
+/*MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs*/
+/*MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs*/
 
 /*MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo*/
 /*MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "*/
@@ -169,8 +188,7 @@ ZMK_LAYER(num,
 
 ZMK_LAYER(sys,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     //     &kp ESC      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       ___          ___               ___           ___            ___          ___           ___           ___
-          &kp ESC       ___              ___           ___            ___          ___               ___           ___            ___          ___           ___           ___
+          &kp ESC      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       ___          ___               ___           ___            ___          ___           ___           ___
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &sys_reset    &bootloader     ___           ___             ___          ___               ___           ___            ___       &kp K_LOCK    &bootloader   &sys_reset
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
