@@ -32,4 +32,14 @@ layers:
     - Space
     - Null
     - {h: Shift,   t: "Sticky Shift"}
+  SYS:
+    - [Esc,"BT_SEL0","BT_SEL1" ,"BT_SEL2", Null, Null, Null, Null, Null, Null, Null, Null]
+    - ["Sys reset", "bootloader", Null, Null, Null, Null, Null, Null, Null, Null, "bootloader", "Sys reset"]
+    - [Null, Null, Null, Null, Null, Null, "Mic Mute", "Mute", "Vol up", "Vol Dn", Null, Null]
+    - Null
+    - Null
+    - Null
+    - Null
+    - Null
+    - Null
  
