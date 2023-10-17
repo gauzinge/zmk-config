@@ -1,0 +1,45 @@
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x6_3
+layers:
+  DEF:
+    - [Esc, Q, W, E, R, T, Y, U, I, O, P, BSpace]
+    - [Tab, {h: Gui, t: A}, {h: Alt, t: S}, {h: Ctrl, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Ctrl, t: K}, {h: Alt, t: L}, {h: Gui, t: ";"},"'"]
+    - [Ctrl, Z, X, C, V, B, N, M, ",", ., /, Alt]
+    - Shift
+    - {h: NAV,   t: BSpace}
+    - Enter
+    - Space
+    - {h: NUM, t: Del}
+    - {h: Shift,   t: "Sticky Shift"}
+  NUM:
+    - [Esc,"!", "@", "#", "$", "%", "^", "&", "*", "(", ")","|"]
+    - [Tab, "1", "2", "3", "4", "5", "6", "7", "8", "9", "0","_"]
+    - [Ctrl, "=", "-", "+", "[", "{", "}", "]", ",", ".", "/", Alt]
+    - Gui
+    - Null
+    - Enter
+    - Space
+    - Null
+    - {h: Shift,   t: "Sticky Shift"}
+  NAV:
+    - [Esc,F1, F2, F3, F4, F5, F6, F7, F8, F9, Del, BSpace]
+    - [Tab, {h: Gui, t: F10}, {h: Alt, t: F11}, {h: Ctrl, t: F12}, Shift, Caps, Left, Down, Up, Right, {h:Gui, t: Gui}, Null]
+    - [Ctrl, "Undo", "Cut", "Copy", "Paste", "Caps Word", Null, Home, Page Down, Page Up, End, Alt]
+    - Gui
+    - Null
+    - Enter
+    - Space
+    - Null
+    - {h: Shift,   t: "Sticky Shift"}
+  SYS:
+    - [Esc,"BT_SEL0","BT_SEL1" ,"BT_SEL2", Null, Null, Null, Null, Null, Null, Null, Null]
+    - ["Sys reset", "bootloader", Null, Null, Null, Null, Null, Null, Null, Null, "bootloader", "Sys reset"]
+    - [Null, Null, Null, Null, Null, Null, "Mic Mute", "Mute", "Vol up", "Vol Dn", Null, Null]
+    - Null
+    - Null
+    - Null
+    - Null
+    - Null
+    - Null
+ 
