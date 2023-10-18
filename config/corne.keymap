@@ -138,12 +138,12 @@ ZMK_LAYER(default,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp ESC         &kp Q         &kp W         &kp E         &kp R           &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P       &kp BSPC
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          //&kp TAB       &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F     &kp G             &kp H     &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmr LGUI SEMI  &kp SQT
-          &kp TAB       &hml LCTRL A   &hml LALT S   &hml LGUI D  &hml LSHFT F     &kp G             &kp H     &hmr RSHFT J  &hmr LGUI K  &hmr LALT L   &hmr LCTRL SEMI  &kp SQT
+          //&kp TAB      &hml LGUI A   &hml LALT S   &hml LCTRL D &hml LSHFT F     &kp G             &kp H     &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmr LGUI SEMI  &kp SQT
+          &kp TAB       &hml LCTRL A   &hml LALT S   &hml LGUI D  &hml LSHFT F     &kp G             &kp H     &hmr RSHFT J  &hmr LGUI K   &hmr LALT L   &hmr LCTRL SEMI  &kp SQT
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp LCTRL         &kp Z         &kp X         &kp C         &kp V        &kp B             &kp N         &kp M       &kp COMMA      &kp DOT      &kp FSLH      &kp LALT
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                   &lt NAV BSPC     &smart_shft   kp RET           &kp SPACE    &smart_shft    &bs_del_num   
+                                                   &lt NAV BSPC     &smart_shft   &kp RET           &kp SPACE    &smart_shft    &bs_del_num   
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -154,7 +154,7 @@ ZMK_LAYER(nav,
           //&kp TAB      &hml LGUI F10 &hml LALT F11 &hml LCTRL F12 &hml LSHFT LSHIFT &kp CAPS     &kp LEFT      &hmr RSHFT DOWN &hmr LCTRL UP &hmr RALT RIGHT &hmr LGUI LGUI   ___ 
           &kp TAB      &hml LCTRL F10 &hml LALT F11 &hml LGUI F12 &hml LSHFT LSHIFT &kp CAPS       &kp LEFT      &kp DOWN          &kp UP     &kp RIGHT       &kp LCTRL     ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        //  &kp LCTRL      &kp LC(Z)     &kp LC(X)    &kp LC(C)      &kp LC(V)    &caps_word             ___       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END      &kp LALT
+     //   &kp LCTRL      &kp LC(Z)     &kp LC(X)    &kp LC(C)      &kp LC(V)    &caps_word             ___       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END      &kp LALT
           &kp LCTRL      &kp LC(Z)     &kp LG(X)    &kp LG(C)      &kp LG(V)    &caps_word             ___       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END      &kp LALT
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                      &kp LGUI         ___         &kp RET           &kp SPACE   &smart_shft      ___       
