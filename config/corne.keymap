@@ -94,7 +94,7 @@ ZMK_COMBO(combo_copy,   &kp LG(C),  LB3 LB4, ALL)  // Ctrl + C, active on all la
 ZMK_COMBO(combo_paste,  &kp LG(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_esc,  &kp ESC,  LM4 LM5, ALL)  // esc
 ZMK_COMBO(combo_bsp,  &kp BSPC,  RT4 RT5, ALL)  // backspace
-ZMK_COMBO(combo_quotes,  &kp SQT,  RT4 RT5, DEFAULT)  // quotes, only on default
+ZMK_COMBO(combo_quotes,  &kp SQT,  RT4 RT5, DEF)  // quotes, only on default
 
 /* Keymap */
 
