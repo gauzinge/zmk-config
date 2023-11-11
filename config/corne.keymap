@@ -92,6 +92,9 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
 ZMK_COMBO(combo_copy,   &kp LG(C),  LB3 LB4, ALL)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,  &kp LG(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_esc,  &kp ESC,  LM4 LM5, ALL)  // esc
+ZMK_COMBO(combo_bsp,  &kp BSPC,  RT4 RT5, ALL)  // backspace
+ZMK_COMBO(combo_quotes,  &kp SQT,  RT4 RT5, default)  // quotes, only on default
 
 /* Keymap */
 
@@ -106,8 +109,8 @@ ZMK_LAYER(default,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT      &kp FSLH        &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                   &lt NAV BSPC  &mt LGUI LPAR &mt LS(LALT) RET &kp SPACE   &mt LALT RPAR    &bs_del_num   
-                                                   // &lt NAV BSPC  &mt LCTRL LPAR   &kp RET           &kp SPACE   &mt LALT RPAR    &bs_del_num   
+                                                   &lt NAV BSPC  &mt LGUI LPAR &mt LS(LALT) RET &mt LCTRL SPACE   &mt LALT RPAR    &bs_del_num   
+                                                   // &lt NAV BSPC  &mt LCTRL LPAR   &kp RET     &mt LCTRL SPACE   &mt LALT RPAR    &bs_del_num   
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -119,10 +122,10 @@ ZMK_LAYER(nav,
          &kp TAB      &hml LCTRL F10 &hml LALT F11 &hml LGUI F12 &hml LSHFT LSHIFT &kp CAPS       &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT       &kp LCTRL     ___
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        // &smart_shft      &kp LC(Z)     &kp LC(X)    &kp LC(C)      &kp LC(V)    &caps_word             ___       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END  &smart_shft
-          &smart_shft      &kp LC(Z)     &kp LG(X)    &kp LG(C)      &kp LG(V)    &caps_word             ___       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END  &smart_shft
+          &smart_shft      &kp LG(Z)     &kp LG(X)    &kp LG(C)      &kp LG(V)    &caps_word             ___       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END  &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                      ___         &mt LGUI LPAR    &kp RET           &kp LCTRL  &mt LALT RPAR    &kp LCTRL       
-                                                     // ___         &mt LCTRL LPAR    &kp RET       &kp LCTRL  &mt LALT RPAR &kp LCTRL      
+                                                     // ___         &mt LCTRL LPAR    &kp RET       &kp SPACE  &mt LALT RPAR &kp LCTRL      
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
