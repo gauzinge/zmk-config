@@ -65,7 +65,7 @@ ZMK_BEHAVIOR(hml, hold_tap,
 ZMK_BEHAVIOR(hmr, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
-    quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
+    quick-tap-ms = <QUICK_TAP_MS>;                 // repeat on tap-into-hold
     require-prior-idle-ms = <150>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
@@ -92,9 +92,10 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
 ZMK_COMBO(combo_copy,   &kp LG(C),  LB3 LB4, ALL)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,  &kp LG(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_esc,  &kp ESC,  LM4 LM5, ALL)  // esc
-ZMK_COMBO(combo_bsp,  &kp BSPC,  RT4 RT5, ALL)  // backspace
-ZMK_COMBO(combo_quotes,  &kp SQT,  RT4 RT5, DEF)  // quotes, only on default
+ZMK_COMBO(combo_tab,  &kp ESC,  LT3 LT4, ALL)  // esc
+ZMK_COMBO(combo_esc,  &kp ESC,  LM3 LM4, ALL)  // esc
+ZMK_COMBO(combo_bsp,  &kp BSPC,  RT3 RT4, ALL)  // backspace
+ZMK_COMBO(combo_quotes,  &kp SQT,  RM3 RM4, DEF)  // quotes, only on default
 
 /* Keymap */
 
