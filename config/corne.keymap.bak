@@ -93,9 +93,12 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 ZMK_COMBO(combo_copy,   &kp LG(C),  LB3 LB4, ALL)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,  &kp LG(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_tab,  &kp TAB,  LT3 LT4, ALL)  // esc
-ZMK_COMBO(combo_esc,  &kp ESC,  LM3 LM4, ALL)  // esc
+ZMK_COMBO(combo_esc,  &kp ESC,  RM1 RM2, ALL)  // esc
 ZMK_COMBO(combo_bsp,  &kp BSPC,  RT3 RT4, ALL)  // backspace
 ZMK_COMBO(combo_quotes,  &kp SQT,  RM3 RM4, DEF)  // quotes, only on default
+ZMK_COMBO(combo_sym_minus,  &kp MINUS,  LT1 RT1, ALL)  // minus, all layers
+ZMK_COMBO(combo_sym_under,  &kp UNDER,  LB1 RB1, ALL)  // under, all layers
+ZMK_COMBO(combo_capsword,  &caps_word,  LB5 RB5, ALL)  // capsword, both shifts, all layers
 
 /* Keymap */
 
