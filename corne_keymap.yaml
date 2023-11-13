@@ -81,9 +81,9 @@ layers:
     - null
 
   NAV:
-    - [Tab, null, null, "Spacer Prev", "Space Next", null, "Redo", "Paste", "Copy", "Cut", "Undo", BSpace]
+    - ["SP lft", "SP rgt", "tab", "tab_bk", "App sw", "App sw bk", "Redo", "Paste", "Copy", "Cut", "Undo", BSpace]
     - [Esc, Ctrl, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
-    - ["Swapper", "Undo", "Cut", "Copy", "Paste", "Redo", null, Home, Page Up, Page Down, End, Shift]
+    - [Shift, "Undo", "Cut", "Copy", "Paste", "Redo", null, Home, Page Up, Page Down, End, Shift]
     - null
     - {type: held}
     - null
@@ -103,12 +103,12 @@ layers:
     - null
 
 combos:
-- {p: [1, 2], k: Tab, l: ["DEF"]}
+  - {p: [1, 2], k: Tab, l: ["DEF"]}
   - {p: [9, 10], k: BSpace, l: ["DEF"]}
-  - {p: [4, 7],   k: "-", l: ["DEF"]}
-  - {p: [12, 13], k: "(", l: ["DEF"]}
-  - {p: [16, 17], k: ")", l: ["DEF"]}
-  - {p: [11, 12], k: "[", l: ["DEF"]}
-  - {p: [17, 18], k: "]", l: ["DEF"]}
-  - {p: [26, 27], k: "\\", l: ["DEF"]}
-  - {p: [27, 28], k: "|", l: ["DEF"]}
+  - {p: [19, 20],   k: Esc, l: ["DEF"]}
+  - {p: [16, 19], k: "caps_word", l: ["DEF"]}
+  - {p: [21, 22], k: "'", l: ["DEF"]}
+  - {p: [4, 7], k: "-", l: ["DEF"]}
+  - {p: [28, 31], k: "_", l: ["DEF"]}
+  - {p: [25, 26], k: "copy", l: ["DEF"]}
+  - {p: [27, 28], k: "paste", l: ["DEF"]}

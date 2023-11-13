@@ -155,12 +155,12 @@ ZMK_LAYER(default,
 ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &kp LC(LEFT)    &kp LC(RIGHT)        &tab       &tab_bk    &swapper_mac &swapper_mac_bk      &kp LC(LS(Z))  &kp LC(V)     &kp LC(C)     &kp LC(X)     &kp LC(Z)      &bs_del
-      &kp LG(LC(LEFT)) &kp LG(LC(RIGHT))   &tab       &tab_bk    &swapper_win &swapper_win_bk      &kp LC(LS(Z))  &kp LC(V)     &kp LC(C)     &kp LC(X)     &kp LC(Z)      &bs_del
+      // &kp LG(LC(LEFT)) &kp LG(LC(RIGHT))   &tab       &tab_bk    &swapper_win &swapper_win_bk      &kp LC(LS(Z))  &kp LC(V)     &kp LC(C)     &kp LC(X)     &kp LC(Z)      &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
            &kp ESC        &kp LCTRL      &kp LALT      &kp LGUI      &kp LSHFT      ___            &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT       ___           ___
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          // &smart_shft     &kp LG(Z)      &kp LG(X)     &kp LG(C)     &kp LG(V)   &kp LG(LS(Z))        ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
-         &smart_shft    &kp LC(Z)      &kp LC(X)     &kp LC(C)     &kp LC(V)   &kp LC(LS(Z))        ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
+          &smart_shft     &kp LG(Z)      &kp LG(X)     &kp LG(C)     &kp LG(V)   &kp LG(LS(Z))        ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
+         // &smart_shft    &kp LC(Z)      &kp LC(X)     &kp LC(C)     &kp LC(V)   &kp LC(LS(Z))        ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                      ___             ___            ___         &mt LCTRL SPACE &bs_del_num      &kp LALT
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
