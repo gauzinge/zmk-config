@@ -95,8 +95,13 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
     /delete-property/ ignore-modifiers;
 };                                                                                                                       // Alt+Tab swapper, requires PR #1366
 
-ZMK_BEHAVIOR(swapper, tri_state,
+ZMK_BEHAVIOR(swapper_mac, tri_state,
     bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+    ignored-key-positions = <LT2>;
+)
+
+ZMK_BEHAVIOR(swapper_win, tri_state,
+    bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
     ignored-key-positions = <LT2>;
 )
 
@@ -130,13 +135,13 @@ ZMK_LAYER(default,
 
 ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-           &kp TAB          ___           ___      &kp LC(LEFT)  &kp LC(RIGHT)          ___           &kp LG(LS(Z))  &kp LG(V)     &kp LG(C)     &kp LG(X)     &kp LG(Z)      &bs_del
-           // &kp TAB          ___           ___   &kp LG(LC(LEFT)) &kp LG(LC(RIGHT))      ___           &kp LC(LS(Z))  &kp LC(V)     &kp LC(C)     &kp LC(X)     &kp LC(Z)      &bs_del
+           // &kp TAB          ___           ___      &kp LC(LEFT)  &kp LC(RIGHT)          ___           &kp LG(LS(Z))  &kp LG(V)     &kp LG(C)     &kp LG(X)     &kp LG(Z)      &bs_del
+           &kp TAB          ___           ___   &kp LG(LC(LEFT)) &kp LG(LC(RIGHT))      ___           &kp LC(LS(Z))  &kp LC(V)     &kp LC(C)     &kp LC(X)     &kp LC(Z)      &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
            &kp ESC        &kp LCTRL      &kp LALT      &kp LGUI      &kp LSHFT      ___            &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT       ___           ___
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &swapper     &kp LG(Z)      &kp LG(X)     &kp LG(C)     &kp LG(V)   &kp LG(LS(Z))        ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
-          // &smart_shft     &kp LC(Z)      &kp LC(X)     &kp LC(C)     &kp LC(V)   &kp LC(LS(Z))        ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
+          // &swapper_mac     &kp LG(Z)      &kp LG(X)     &kp LG(C)     &kp LG(V)   &kp LG(LS(Z))        ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
+         &swapper_win    &kp LC(Z)      &kp LC(X)     &kp LC(C)     &kp LC(V)   &kp LC(LS(Z))        ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                      ___             ___            ___         &mt LCTRL SPACE &bs_del_num      &kp LALT
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
