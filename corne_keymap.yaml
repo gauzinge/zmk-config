@@ -91,7 +91,7 @@ layers:
     - {t: BSpace, h: NUM}
     - Alt
   
-SYS:
+  SYS:
     - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12]
     - ["reset", "boot", null, null, null, null, null, null, null, "Lock", "boot", "reset"]
     - ["BT0", "BT1", "BT2", "BT CLR", null, null, "Mic Tog", "Mute", "Vol Down", "Vol Up", null, null]
