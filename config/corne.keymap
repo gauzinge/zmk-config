@@ -131,7 +131,7 @@ ZMK_BEHAVIOR(swapper_win_bk, tri_state,
 )
 
 ZMK_BEHAVIOR(tab, tri_state,
-    bindings = <&kt LS(LCTRL)>, <&kp TAB>, <&kt LS(LCTRL)>;
+    bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
     ignored-key-positions = <LT2>;
 )
 ZMK_BEHAVIOR(tab_bk, tri_state,
