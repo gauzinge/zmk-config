@@ -178,7 +178,7 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 #define UDO &kp LG(Z)
 #define RDO &kp LS(LG(Z))
 
-#define COLSEM &col_semi
+#define COLSEM &col_semi_inner
 
 /* Keymap */
 
@@ -222,7 +222,7 @@ ZMK_LAYER(num,
 
 ZMK_LAYER(sym,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp TAB      &tilde_grave     &kp EXCL      &kp AT         &kp HASH      &kp FSLH            ___           ___           ___           ___           ___          &bs_del
+          &kp TAB      &tilde_grave   &kp EXCL      &kp AT         &kp HASH      &kp FSLH            ___           ___           ___           ___           ___          &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp ESC       &kp PIPE      &kp CARET     &kp PRCNT      &kp DLLR      &kp BSLH            ___        &kp LSHFT     &kp LGUI      &kp LALT       &kp LCTRL        ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
