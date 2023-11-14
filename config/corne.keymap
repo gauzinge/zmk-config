@@ -73,6 +73,12 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     hold-trigger-on-release;             // delay positional check until key-release
 )
 
+//normal: tilde, shift: grave
+ZMK_BEHAVIOR(col_semi_inner, mod_morph,
+    bindings = <&kp COLON>, <&kp SEMI>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
 // tap: backspace | shift + tap: delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
     bindings = <&lt NUM BSPC>, <&kp DEL>;
@@ -172,6 +178,8 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 #define UDO &kp LG(Z)
 #define RDO &kp LS(LG(Z))
 
+#define COLSEM &col_semi
+
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(NAV NUM, SYS)  // NAV + SYM --> SYS
@@ -180,7 +188,7 @@ ZMK_LAYER(default,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp TAB         &kp Q         &kp W         &kp E         &kp R           &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P       &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &mt LS(LALT) ESC &hml LCTRL A   &hml LALT S   &hml LGUI D  &hml LSHFT F     &kp G             &kp H     &hmr RSHFT J  &hmr LGUI K   &hmr LALT L   &hmr LCTRL SEMI  &kp SQT
+       &mt LS(LALT) ESC &hml LCTRL A   &hml LALT S   &hml LGUI D  &hml LSHFT F     &kp G             &kp H     &hmr RSHFT J  &hmr LGUI K   &hmr LALT L  &hmr LCTRL COLSEM  &kp SQT
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
