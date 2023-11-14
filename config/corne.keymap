@@ -140,7 +140,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
 
-//normal: colon, shiftf: semicolon
+//normal: tilde, shift: grave
 ZMK_BEHAVIOR(tilde_grave, mod-morph,
              bindings = <&kp TILDE>, <&kp GRAVE>;
              mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -214,7 +214,7 @@ ZMK_LAYER(num,
 
 ZMK_LAYER(sym,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp TAB       &kp TILDE     &kp EXCL      &kp AT         &kp HASH      &kp FSLH            ___           ___           ___           ___           ___          &bs_del
+          &kp TAB      &tilde_grave     &kp EXCL      &kp AT         &kp HASH      &kp FSLH            ___           ___           ___           ___           ___          &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp ESC       &kp PIPE      &kp CARET     &kp PRCNT      &kp DLLR      &kp BSLH            ___        &kp LSHFT     &kp LGUI      &kp LALT       &kp LCTRL        ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
