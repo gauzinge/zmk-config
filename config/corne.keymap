@@ -178,26 +178,26 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 #define TAB_SWAP &tab
 #define TAB_BK &tab_bk
 //OSX
-#define PREV_DSK &kp LC(LEFT)
-#define NEXT_DSK &kp LC(RIGHT)
-#define APP_SWAP &swapper_mac
-#define APP_BK &swapper_mac_bk
-#define CP &kp LG(C)
-#define CT &kp LG(X)
-#define PST &kp LG(V)
-#define UDO &kp LG(Z)
-#define RDO &kp LS(LG(Z))
-
-//WIN
-// #define PREV_DSK &kp LC(LG(LEFT))
-// #define NEXT_DSK &kp LC(LG(RIGHT))
+// #define PREV_DSK &kp LC(LEFT)
+// #define NEXT_DSK &kp LC(RIGHT)
 // #define APP_SWAP &swapper_mac
 // #define APP_BK &swapper_mac_bk
-// #define CP &kp LC(C)
-// #define CT &kp LC(X)
-// #define PST &kp LC(V)
-// #define UDO &kp LC(Z)
-// #define RDO &kp LS(LC(Z))
+// #define CP &kp LG(C)
+// #define CT &kp LG(X)
+// #define PST &kp LG(V)
+// #define UDO &kp LG(Z)
+// #define RDO &kp LS(LG(Z))
+
+//WIN
+#define PREV_DSK &kp LC(LG(LEFT))
+#define NEXT_DSK &kp LC(LG(RIGHT))
+#define APP_SWAP &swapper_mac
+#define APP_BK &swapper_mac_bk
+#define CP &kp LC(C)
+#define CT &kp LC(X)
+#define PST &kp LC(V)
+#define UDO &kp LC(Z)
+#define RDO &kp LS(LC(Z))
 
 
 /* Keymap */
