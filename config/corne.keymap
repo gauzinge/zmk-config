@@ -55,7 +55,7 @@
 /* left-hand HRMs */
 ZMK_BEHAVIOR(hml, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <280>;
+    tapping-term-ms = <250>;
     quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
     require-prior-idle-ms = <150>;
     bindings = <&kp>, <&kp>;
@@ -65,21 +65,21 @@ ZMK_BEHAVIOR(hml, hold_tap,
 /* right-hand HRMs */
 ZMK_BEHAVIOR(hmr, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <280>;
+    tapping-term-ms = <250>;
     quick-tap-ms = <QUICK_TAP_MS>;                 // repeat on tap-into-hold
     require-prior-idle-ms = <150>;
     bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-key-positions = <(KEYS_L THUMBS|KEYS_L)>;
     hold-trigger-on-release;             // delay positional check until key-release
 )
 
 ZMK_BEHAVIOR(hms, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <280>;
+    tapping-term-ms = <250>;
     quick-tap-ms = <QUICK_TAP_MS>;                 // repeat on tap-into-hold
     require-prior-idle-ms = <150>;
     bindings = <&kp>, <&col_semi_inner>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-key-positions = <(KEYS_L THUMBS|KEYS_L)>;
     hold-trigger-on-release;             // delay positional check until key-release
 )
 
@@ -140,21 +140,21 @@ ZMK_BEHAVIOR(tab_bk, tri_state,
 )
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
-ZMK_BEHAVIOR(lt_spc, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&spc_morph>;
-)
-ZMK_BEHAVIOR(spc_morph, mod_morph,
-    bindings = <&kp SPACE>, <&dot_spc>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-ZMK_BEHAVIOR(dot_spc, macro,
-    wait-ms = <0>;
-    tap-ms = <5>;
-    bindings = <&kp DOT &kp SPACE &sk LSHFT>;
-)
+// ZMK_BEHAVIOR(lt_spc, hold_tap,
+//     flavor = "balanced";
+//     tapping-term-ms = <200>;
+//     quick-tap-ms = <QUICK_TAP_MS>;
+//     bindings = <&mo>, <&spc_morph>;
+// )
+// ZMK_BEHAVIOR(spc_morph, mod_morph,
+//     bindings = <&kp SPACE>, <&dot_spc>;
+//     mods = <(MOD_LSFT|MOD_RSFT)>;
+// )
+// ZMK_BEHAVIOR(dot_spc, macro,
+//     wait-ms = <0>;
+//     tap-ms = <5>;
+//     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+// )
 
 //normal: tilde, shift: grave
 ZMK_BEHAVIOR(tilde_grave, mod_morph,
@@ -188,7 +188,16 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 #define UDO &kp LG(Z)
 #define RDO &kp LS(LG(Z))
 
-#define COLSEM &col_semi_inner
+//WIN
+// #define PREV_DSK &kp LC(LG(LEFT))
+// #define NEXT_DSK &kp LC(LG(RIGHT))
+// #define APP_SWAP &swapper_mac
+// #define APP_BK &swapper_mac_bk
+// #define CP &kp LC(C)
+// #define CT &kp LC(X)
+// #define PST &kp LC(V)
+// #define UDO &kp LC(Z)
+// #define RDO &kp LS(LC(Z))
 
 
 /* Keymap */
@@ -203,7 +212,7 @@ ZMK_LAYER(default,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                   &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &lt_spc SYM 0  &bs_del_num  &mt LALT RPAR  
+                                                   &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &lt SYM SPACE  &bs_del_num  &mt LALT RPAR  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -221,7 +230,7 @@ ZMK_LAYER(nav,
 
 ZMK_LAYER(num,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &tog NUM       &kp MINUS      &kp N1        &kp N2         &kp N3       &kp PLUS             ___           ___          ___            ___          ___          &bs_del
+          &kp TAB       &kp MINUS      &kp N1        &kp N2         &kp N3       &kp PLUS             ___           ___          ___            ___          ___          &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp ESC       &kp FSLH       &kp N4        &kp N5         &kp N6       &kp STAR            ___        &kp LSHFT     &kp LGUI      &kp LALT      &kp LCTRL        ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
