@@ -141,9 +141,9 @@ ZMK_BEHAVIOR(dot_spc, macro,
 )
 
 //normal: tilde, shift: grave
-ZMK_BEHAVIOR(tilde_grave, mod-morph,
-             bindings = <&kp TILDE>, <&kp GRAVE>;
-             mods = <(MOD_LSFT|MOD_RSFT)>;
+ZMK_BEHAVIOR(tilde_grave, mod_morph,
+    bindings = <&kp TILDE>, <&kp GRAVE>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 #undef COMBO_TERM
