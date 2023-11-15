@@ -197,16 +197,16 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 
 ZMK_BEHAVIOR(dsk_cycle, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&kp NEXT_DSK>, <&kp PREV_DSK>;
+    bindings = <NEXT_DSK>, <PREV_DSK>;
 )
 
 ZMK_BEHAVIOR(tab_cycle, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&kp TAB_SWAP>, <&kp TAB_BK>;
+    bindings = <TAB_SWAP>, <TAB_BK>;
 )
 ZMK_BEHAVIOR(app_cycle, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&kp APP_SWAP>, <&kp APP_BK>;
+    bindings = <APP_SWAP>, <APP_BK>;
 )
 
 ZMK_BEHAVIOR(copy_cut, tap_dance,
