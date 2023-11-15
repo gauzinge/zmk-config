@@ -142,7 +142,6 @@ ZMK_BEHAVIOR(tab_bk, tri_state,
 
 //tap for space, hold for SYM, double tap for dot space
 ZMK_BEHAVIOR(sp_dot_sym, tap_dance,
-    flavour = "balanced";
     tapping-term-ms = <200>;
     bindings = <&lt SYM SPACE>, <&dot_spc>;
 )
