@@ -139,22 +139,18 @@ ZMK_BEHAVIOR(tab_bk, tri_state,
     ignored-key-positions = <LT2>;
 )
 
-// tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
-// ZMK_BEHAVIOR(lt_spc, hold_tap,
-//     flavor = "balanced";
-//     tapping-term-ms = <200>;
-//     quick-tap-ms = <QUICK_TAP_MS>;
-//     bindings = <&mo>, <&spc_morph>;
-// )
-// ZMK_BEHAVIOR(spc_morph, mod_morph,
-//     bindings = <&kp SPACE>, <&dot_spc>;
-//     mods = <(MOD_LSFT|MOD_RSFT)>;
-// )
-// ZMK_BEHAVIOR(dot_spc, macro,
-//     wait-ms = <0>;
-//     tap-ms = <5>;
-//     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
-// )
+//tap for space, hold for SYM, double tap for dot space
+ZMK_BEHAVIOR(sp_dot_sym, tap_dance,
+    flavour = "balanced",
+    tapping-term-ms = <200>;
+    bindings = <&lt SYM SPACE>, <&dot_spc>;
+)
+
+ZMK_BEHAVIOR(dot_spc, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp DOT &kp SPACE>;
+)
 
 //normal: tilde, shift: grave
 ZMK_BEHAVIOR(tilde_grave, mod_morph,
@@ -182,23 +178,28 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 // #define NEXT_DSK &kp LC(RIGHT)
 // #define APP_SWAP &swapper_mac
 // #define APP_BK &swapper_mac_bk
-// #define CP &kp LG(C)
-// #define CT &kp LG(X)
-// #define PST &kp LG(V)
-// #define UDO &kp LG(Z)
-// #define RDO &kp LS(LG(Z))
+// #define CP LG(C)
+// #define CT LG(X)
+// #define PST LG(V)
+// #define UDO LG(Z)
+// #define RDO LS(LG(Z))
 
 //WIN
 #define PREV_DSK &kp LC(LG(LEFT))
 #define NEXT_DSK &kp LC(LG(RIGHT))
 #define APP_SWAP &swapper_mac
 #define APP_BK &swapper_mac_bk
-#define CP &kp LC(C)
-#define CT &kp LC(X)
-#define PST &kp LC(V)
-#define UDO &kp LC(Z)
-#define RDO &kp LS(LC(Z))
+#define CP LC(C)
+#define CT LC(X)
+#define PST LC(V)
+#define UDO LC(Z)
+#define RDO LS(LC(Z))
 
+ZMK_BEHAVIOR(copy_cut, tap_dance,
+    flavour = "balanced",
+    tapping-term-ms = <200>;
+    bindings = <&kp CP>, <&CT>;
+)
 
 /* Keymap */
 
@@ -212,19 +213,19 @@ ZMK_LAYER(default,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                   &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &lt SYM SPACE  &bs_del_num  &mt LALT RPAR  
+                                                   &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET       &sp_dot_sym  &bs_del_num  &mt LALT RPAR  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
 ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          PREV_DSK       NEXT_DSK        TAB_BK       TAB_SWAP       APP_BK       APP_SWAP             RDO          PST           CP            CT            UDO        &bs_del
+          PREV_DSK       NEXT_DSK        TAB_BK       TAB_SWAP       APP_BK       APP_SWAP         &copy_cut     &kp UDO          ___           ___         &kp PST        &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-           &kp ESC        &kp LCTRL      &kp LALT      &kp LGUI      &kp LSHFT      ___            &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT       ___           ___
+           &kp ESC        &kp LCTRL      &kp LALT      &kp LGUI      &kp LSHFT      ___            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       ___           ___
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &smart_shft       UDO           CT            CP            PST           RDO               ___         &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
+          &smart_shft    &kp UDO       &copy_cut     &copy_cut       &kp PST       &kp RDO               ___     &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                     ___             ___            ___         &mt LCTRL SPACE &bs_del_num      &kp LALT
+                                                     ___             ___            ___         &mt LCTRL SPACE  &mo NUM      &kp LALT
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
