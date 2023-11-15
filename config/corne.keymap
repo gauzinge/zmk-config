@@ -197,7 +197,6 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 #define RDO LS(LC(Z))
 
 ZMK_BEHAVIOR(copy_cut, tap_dance,
-    flavour = "balanced",
     tapping-term-ms = <200>;
     bindings = <&kp CP>, <&CT>;
 )
