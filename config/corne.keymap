@@ -198,7 +198,7 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 
 ZMK_BEHAVIOR(copy_cut, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&kp CP>, <&CT>;
+    bindings = <&kp CP>, <&kp CT>;
 )
 
 /* Keymap */
@@ -213,7 +213,7 @@ ZMK_LAYER(default,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                   &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &sp_dot_sym 0  &bs_del_num  &mt LALT RPAR  
+                                                   &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &sp_dot_sym   &bs_del_num  &mt LALT RPAR  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
