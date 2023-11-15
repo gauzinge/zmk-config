@@ -43,25 +43,24 @@
 #     - Null
 #     - Null
 
-
 layout:
   qmk_keyboard: corne_rotated
   qmk_layout: LAYOUT_split_3x6_3
 layers:
   DEF:
     - [Tab, Q, W, E, R, T, Y, U, I, O, P, BSpace]
-    - [Esc, {h: Ctrl, t: A}, {h: Alt, t: S}, {h: Gui, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Gui, t: K}, {h: Alt, t: L}, {h: Ctrl, t: ";"}, "'"]
+    - [Esc, {h: Ctrl, t: A}, {h: Alt, t: S}, {h: Gui, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Gui, t: K}, {h: Alt, t: L}, {h: Ctrl, t: ":"}, "'"]
     - [Shift, Z, X, C, V, B, N, M, ",", ., /, Shift]
-    - {h: Gui,   t: (, type: ghost}
+    - {h: Gui,   t: (}
     - {h: NAV,  t: Tab}
     - {h: Ctrl,   t: Enter}
     - {h: SYM,   t: Space}
     - {h: NUM, t: BSpace}
-    - {h: Alt,   t: ), type: ghost}
+    - {h: Alt,   t: )}
   NUM:
-    - [Tab, "-", "1", "2", "3", "+", null, null, null, null, null, BSpace]
-    - [Esc, "/", "4", "5", "6", "*", null, Shift, Gui, Alt, Ctrl, null]
-    - [Shift, ".", "7", "8", "9", "=", null, null, null, null, null, Shift]
+    - [null, "-", "1", "2", "3", "+", null, null, null, null, null, null]
+    - [null, "/", "4", "5", "6", "*", null, Shift, Gui, Alt, Ctrl, null]
+    - [null, ".", "7", "8", "9", "=", null, null, null, null, null, null]
     - {t: "(", h: Gui}
     - "0"
     - {t: ")", h: Ctrl}
@@ -70,9 +69,9 @@ layers:
     - null
 
   SYM:
-    - [Tab, "`", "!", "@", "#", "\/", null, null, null, null, null, BSpace]
-    - [Esc, "|", "^", "%", "$", "\\", null, Shift, Gui, Alt, Ctrl, null]
-    - [Shift, "_", "&", "*", "(", ")", null, null, null, null, null, Shift]
+    - [null, "`", "!", "@", "#", "\/", null, null, null, null, null, null]
+    - [null, "|", "^", "%", "$", "\\", null, Shift, Gui, Alt, Ctrl, null]
+    - [null, "_", "&", "*", "(", ")", null, null, null, null, null, null]
     - "["
     - "]"
     - "{"
@@ -81,9 +80,9 @@ layers:
     - null
 
   NAV:
-    - ["SP lft", "SP rgt", "tab", "tab_bk", "App sw", "App sw bk", "Redo", "Paste", "Copy", "Cut", "Undo", BSpace]
-    - [Esc, Ctrl, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
-    - [Shift, "Undo", "Cut", "Copy", "Paste", "Redo", null, Home, Page Up, Page Down, End, Shift]
+    - [null , "SP tog", null, "Tab tog", null, "App tog", "Cpy/Cut", "Undo/Redo", null, null, Paste, null]
+    - [null, Ctrl, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
+    - [null, "Undo/Redo", "Cpy/Cut", "Cpy/Cut", "Paste", "Undo/Redo", null, Home, Page Up, Page Down, End, null]
     - null
     - {type: held}
     - null
@@ -92,9 +91,9 @@ layers:
     - Alt
   
   SYS:
-    - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12]
-    - ["reset", "boot", null, null, null, null, null, null, null, "Lock", "boot", "reset"]
-    - ["BT0", "BT1", "BT2", "BT CLR", null, null, "Mic Tog", "Mute", "Vol Down", "Vol Up", null, null]
+    - [null, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10,null]
+    - [null, "reset", "boot", null, F11, F12, null, null, null, "Lock", "reset", null]
+    - [null, "BT0", "BT1", "BT2", "BT CLR", null, "Mic Tog", "Mute", "Vol Down", "Vol Up", null, null]
     - null
     - {type: held}
     - null
@@ -112,3 +111,5 @@ combos:
   - {p: [28, 31], k: "_", l: ["DEF"]}
   - {p: [25, 26], k: "copy", l: ["DEF"]}
   - {p: [27, 28], k: "paste", l: ["DEF"]}
+
+https://caksoylar.github.io/keymap-drawer?keymap_yaml=H4sIAAAAAAAC_51VbVPaQBD-7q_YXt-0PYUERWWmM0UEbQtqBWyt0jSQqzBELg1hLEP57929S2KIwVI_3Oay--zLPbu5uPZUToLSGsCv26E1FNOutH2nBD3pj4Tly8AOhBNaXY2FevnytN2yxp47CKzC76JVWEOT8McU5rBaowfAJly17C6Hzxy-cKhyOOfQ4nDJoc3hA4dTDmccDpqe3ROdyKM67nGY9UtQCXyXAyYrz7Wi7AbqvRm-H00G6v0wfG_2Bz81ooaaIw7Haf3HlOenVOT6PJWalRiq2GsWlxcG-8bhK4cKhws8AIcTDg3EccZhi0OO65yRU5wSKOb6PKE-KWMA0iJRSb2uQFmqo0D4SVvzshGaFHML4doNVffBA4s6onLaIDUC4x6NJi7mYptYPDNImCQKJN6i0ObHZCcVKUeu2yR2SBRJvIkjhQwqQlRV-qxZgbbIc5fEHol9Eu_-q6QZNXEdXXQLIkZYniUBGxpAhUQIChJDpp4oQV-4zoIV99iKNI0_qMhnJN6TeE7iOvckHv-Q73cSL0m8UKGun0KkRa6voj4oQtShV6-JXUWMsU68m7F_ULTIFg77AluAVTTPIJA3cSkMv4NFRdnzQgWreNNcZRLQtj1yZO5cODJ1iDN7HIhMDjQ5iifFWMieNtYF7Q_l3QjvJg8vqsFNP3isNcn8yboSW1VKdq3H8lZQrTdCZVMbnbw6chYTrjCH94OsvvoHozyLLwRlwk8_siAbuFNz3EzNcc3AZeIq4NrGtYOriGsX1x6ufcLks9nxxVgoDrpSBvGpawbFNMysUWN12RuyhGtW2INWnqmHoR-mfkClfn4_L41BD1p6XhoT3YAL6Sp6o33bY1m9XZnqVe6GnrztSvU7RJBXgis8u9nhMFRXPQcXVQz_lKwzv8cgp0Zeg6KGZeIMBJoEBIKqP2Y2Dhtm7OuArGd7Y-tO-g5bgjapxLBG_OUtQeEs7IaYzaWRcEAKRoiylqJwpMxiVJ30pkuBOHPmXgj0ws8qgfwLh2tAE8IIAAA%3D
