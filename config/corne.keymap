@@ -195,9 +195,28 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 #define UDO LC(Z)
 #define RDO LS(LC(Z))
 
+ZMK_BEHAVIOR(dsk_cycle, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp NEXT_DSK>, <&kp PREV_DSK>;
+)
+
+ZMK_BEHAVIOR(tab_cycle, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp TAB_SWAP>, <&kp TAB_BK>;
+)
+ZMK_BEHAVIOR(app_cycle, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp APP_SWAP>, <&kp APP_BK>;
+)
+
 ZMK_BEHAVIOR(copy_cut, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp CP>, <&kp CT>;
+)
+
+ZMK_BEHAVIOR(udo_rdo, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp UDO>, <&kp RDO>;
 )
 
 ZMK_BEHAVIOR(hm_scrl, hold_tap,
@@ -238,7 +257,7 @@ ZMK_LAYER(default,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &mt LS(LALT) TAB &hml LCTRL A   &hml LALT S   &hml LGUI D &hm_find LSHFT 0     &kp G          &kp H     &hm_scrl RSHFT 0  &hmr LGUI K   &hmr LALT L  &hms LCTRL 0  &kp SQT
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &smart_shft    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
+          &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                    &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET      &sp_dot_sym   &bs_del_num  &mt LALT RPAR  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -246,11 +265,11 @@ ZMK_LAYER(default,
 
 ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          PREV_DSK       NEXT_DSK        TAB_BK       TAB_SWAP       APP_BK       APP_SWAP         &copy_cut     &kp UDO          ___           ___         &kp PST        &bs_del
+             ___        &dsk_cycle       ___        &app_cycle       ___        &tab_cycle         &copy_cut     &udo_rdo         ___           ___         &kp PST         ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-           &kp ESC        &kp LCTRL      &kp LALT      &kp LGUI      &kp LSHFT      ___            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       ___           ___
+             ___          &kp LCTRL      &kp LALT    &kp LGUI     &kp LSHFT         ___            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       ___           ___
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &smart_shft    &kp UDO       &copy_cut     &copy_cut       &kp PST       &kp RDO               ___     &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &smart_shft
+             ___          &udo_rdo       &copy_cut   &copy_cut     &kp PST       &udo_rdo            ___         &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP     &kp END         ___ 
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                      ___             ___            ___         &mt LCTRL SPACE  &mo NUM      &kp LALT
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -258,11 +277,11 @@ ZMK_LAYER(nav,
 
 ZMK_LAYER(num,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp ESC       &kp MINUS      &kp N1        &kp N2         &kp N3       &kp PLUS             ___           ___          ___            ___          ___          &bs_del
+             ___        &kp MINUS      &kp N1        &kp N2         &kp N3       &kp PLUS             ___           ___          ___            ___          ___           ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &kp TAB       &kp FSLH       &kp N4        &kp N5         &kp N6       &kp STAR            ___        &kp LSHFT     &kp LGUI      &kp LALT      &kp LCTRL        ___ 
+             ___        &kp FSLH       &kp N4        &kp N5         &kp N6       &kp STAR            ___        &kp LSHFT     &kp LGUI      &kp LALT      &kp LCTRL        ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &smart_shft   &kp DOT        &kp N7        &kp N8         &kp N9       &kp EQUAL            ___          ___           ___            ___          ___        &smart_shft
+             ___        &kp DOT        &kp N7        &kp N8         &kp N9       &kp EQUAL            ___          ___           ___            ___          ___           ___
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                    &mt LGUI LPAR    &kp N0    &mt LCTRL RPAR          ___          ___           ___
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -270,11 +289,11 @@ ZMK_LAYER(num,
 
 ZMK_LAYER(sym,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp ESC      &tilde_grave   &kp EXCL      &kp AT         &kp HASH      &kp FSLH            ___           ___           ___           ___           ___          &bs_del
+              ___      &tilde_grave   &kp EXCL      &kp AT         &kp HASH      &kp FSLH            ___           ___           ___           ___           ___           ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &kp TAB       &kp PIPE      &kp CARET     &kp PRCNT      &kp DLLR      &kp BSLH            ___        &kp LSHFT     &kp LGUI      &kp LALT       &kp LCTRL        ___ 
+              ___       &kp PIPE      &kp CARET     &kp PRCNT      &kp DLLR      &kp BSLH            ___         &kp LSHFT     &kp LGUI       &kp LALT     &kp LCTRL       ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &smart_shft   &kp UNDER     &kp AMPS      &kp STAR       &kp LPAR      &kp RPAR            ___            ___           ___          ___           ___        &smart_shft
+              ___       &kp UNDER     &kp AMPS      &kp STAR       &kp LPAR      &kp RPAR            ___            ___           ___          ___           ___           ___ 
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                      &kp LBKT      &kp RBKT      &kp LBRC            ___            ___           ___
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
