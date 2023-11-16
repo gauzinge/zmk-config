@@ -187,8 +187,8 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 //WIN
 #define PREV_DSK &kp LC(LG(LEFT))
 #define NEXT_DSK &kp LC(LG(RIGHT))
-#define APP_SWAP &swapper_mac
-#define APP_BK &swapper_mac_bk
+#define APP_SWAP &swapper_win
+#define APP_BK &swapper_win_bk
 #define CP LC(C)
 #define CT LC(X)
 #define PST LC(V)
