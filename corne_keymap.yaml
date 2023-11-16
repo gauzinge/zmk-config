@@ -42,7 +42,6 @@
 #     - Null
 #     - Null
 #     - Null
-
 layout:
   qmk_keyboard: corne_rotated
   qmk_layout: LAYOUT_split_3x6_3
@@ -57,6 +56,16 @@ layers:
     - {h: SYM,   t: Space}
     - {h: NUM, t: BSpace}
     - {h: Alt,   t: )}
+  NAV:
+    - [null , "SP tog", "Tab prv", "Tab nxt", "App prv", "App nxt", "Cpy/Cut", "Undo/Redo", null, null, Paste, null]
+    - [null, Ctrl, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
+    - [null, "Undo/Redo", "Cpy/Cut", "Cpy/Cut", "Paste", "Undo/Redo", null, Home, Page Up, Page Down, End, null]
+    - null
+    - {type: held}
+    - null
+    - {t: Space, h: Ctrl}
+    - {t: BSpace, h: NUM}
+    - Alt
   NUM:
     - [null, "-", "1", "2", "3", "+", null, null, null, null, null, null]
     - [null, "/", "4", "5", "6", "*", null, Shift, Gui, Alt, Ctrl, null]
@@ -79,19 +88,9 @@ layers:
     - null
     - null
 
-  NAV:
-    - [null , "SP tog", null, "Tab tog", null, "App tog", "Cpy/Cut", "Undo/Redo", null, null, Paste, null]
-    - [null, Ctrl, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
-    - [null, "Undo/Redo", "Cpy/Cut", "Cpy/Cut", "Paste", "Undo/Redo", null, Home, Page Up, Page Down, End, null]
-    - null
-    - {type: held}
-    - null
-    - {t: Space, h: Ctrl}
-    - {t: BSpace, h: NUM}
-    - Alt
-  
+ 
   SYS:
-    - [null, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10,null]
+    - [null, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, null]
     - [null, "reset", "boot", null, F11, F12, null, null, null, "Lock", "reset", null]
     - [null, "BT0", "BT1", "BT2", "BT CLR", null, "Mic Tog", "Mute", "Vol Down", "Vol Up", null, null]
     - null
@@ -112,4 +111,74 @@ combos:
   - {p: [25, 26], k: "copy", l: ["DEF"]}
   - {p: [27, 28], k: "paste", l: ["DEF"]}
 
-https://caksoylar.github.io/keymap-drawer?keymap_yaml=H4sIAAAAAAAC_51VbVPaQBD-7q_YXt-0PYUERWWmM0UEbQtqBWyt0jSQqzBELg1hLEP57929S2KIwVI_3Oay--zLPbu5uPZUToLSGsCv26E1FNOutH2nBD3pj4Tly8AOhBNaXY2FevnytN2yxp47CKzC76JVWEOT8McU5rBaowfAJly17C6Hzxy-cKhyOOfQ4nDJoc3hA4dTDmccDpqe3ROdyKM67nGY9UtQCXyXAyYrz7Wi7AbqvRm-H00G6v0wfG_2Bz81ooaaIw7Haf3HlOenVOT6PJWalRiq2GsWlxcG-8bhK4cKhws8AIcTDg3EccZhi0OO65yRU5wSKOb6PKE-KWMA0iJRSb2uQFmqo0D4SVvzshGaFHML4doNVffBA4s6onLaIDUC4x6NJi7mYptYPDNImCQKJN6i0ObHZCcVKUeu2yR2SBRJvIkjhQwqQlRV-qxZgbbIc5fEHol9Eu_-q6QZNXEdXXQLIkZYniUBGxpAhUQIChJDpp4oQV-4zoIV99iKNI0_qMhnJN6TeE7iOvckHv-Q73cSL0m8UKGun0KkRa6voj4oQtShV6-JXUWMsU68m7F_ULTIFg77AluAVTTPIJA3cSkMv4NFRdnzQgWreNNcZRLQtj1yZO5cODJ1iDN7HIhMDjQ5iifFWMieNtYF7Q_l3QjvJg8vqsFNP3isNcn8yboSW1VKdq3H8lZQrTdCZVMbnbw6chYTrjCH94OsvvoHozyLLwRlwk8_siAbuFNz3EzNcc3AZeIq4NrGtYOriGsX1x6ufcLks9nxxVgoDrpSBvGpawbFNMysUWN12RuyhGtW2INWnqmHoR-mfkClfn4_L41BD1p6XhoT3YAL6Sp6o33bY1m9XZnqVe6GnrztSvU7RJBXgis8u9nhMFRXPQcXVQz_lKwzv8cgp0Zeg6KGZeIMBJoEBIKqP2Y2Dhtm7OuArGd7Y-tO-g5bgjapxLBG_OUtQeEs7IaYzaWRcEAKRoiylqJwpMxiVJ30pkuBOHPmXgj0ws8qgfwLh2tAE8IIAAA%3D
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x6_3
+layers:
+  DEF:
+    - [Tab, Q, W, E, R, T, Y, U, I, O, P, BSpace]
+    - [Esc, {h: Ctrl, t: A}, {h: Alt, t: S}, {h: Gui, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Gui, t: K}, {h: Alt, t: L}, {h: Ctrl, t: ":"}, "'"]
+    - [Shift, Z, X, C, V, B, N, M, ",", ., /, Shift]
+    - {h: Gui,   t: (}
+    - {h: NAV,  t: Tab}
+    - {h: Ctrl,   t: Enter}
+    - {h: SYM,   t: Space}
+    - {h: NUM, t: BSpace}
+    - {h: Alt,   t: )}
+  NAV:
+    - [null , "SP tog", "Tab prv", "Tab nxt", "App prv", "App nxt", "Cpy/Cut", "Undo/Redo", null, null, Paste, null]
+    - [null, Ctrl, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
+    - [null, "Undo/Redo", "Cpy/Cut", "Cpy/Cut", "Paste", "Undo/Redo", null, Home, Page Up, Page Down, End, null]
+    - null
+    - {type: held}
+    - null
+    - {t: Space, h: Ctrl}
+    - {t: BSpace, h: NUM}
+    - Alt
+  NUM:
+    - [null, "-", "1", "2", "3", "+", null, null, null, null, null, null]
+    - [null, "/", "4", "5", "6", "*", null, Shift, Gui, Alt, Ctrl, null]
+    - [null, ".", "7", "8", "9", "=", null, null, null, null, null, null]
+    - {t: "(", h: Gui}
+    - "0"
+    - {t: ")", h: Ctrl}
+    - null
+    - {type: held}
+    - null
+
+  SYM:
+    - [null, "`", "!", "@", "#", "\/", null, null, null, null, null, null]
+    - [null, "|", "^", "%", "$", "\\", null, Shift, Gui, Alt, Ctrl, null]
+    - [null, "_", "&", "*", "(", ")", null, null, null, null, null, null]
+    - "["
+    - "]"
+    - "{"
+    - {type: held}
+    - null
+    - null
+
+ 
+  SYS:
+    - [null, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, null]
+    - [null, "reset", "boot", null, F11, F12, null, null, null, "Lock", "reset", null]
+    - [null, "BT0", "BT1", "BT2", "BT CLR", null, "Mic Tog", "Mute", "Vol Down", "Vol Up", null, null]
+    - null
+    - {type: held}
+    - null
+    - null
+    - {type: held}
+    - null
+
+combos:
+  - {p: [1, 2], k: Tab, l: ["DEF"]}
+  - {p: [9, 10], k: BSpace, l: ["DEF"]}
+  - {p: [19, 20],   k: Esc, l: ["DEF"]}
+  - {p: [16, 19], k: "caps_word", l: ["DEF"]}
+  - {p: [21, 22], k: "'", l: ["DEF"]}
+  - {p: [4, 7], k: "-", l: ["DEF"]}
+  - {p: [28, 31], k: "_", l: ["DEF"]}
+  - {p: [25, 26], k: "copy", l: ["DEF"]}
+  - {p: [27, 28], k: "paste", l: ["DEF"]}
+
+  https://caksoylar.github.io/keymap-drawer?keymap_yaml=H4sIAAAAAAAC_51VbVPaQBD-7q_YXt-0PYUERc1MZwoI2hbUCthapWmAqzBELg2hylj-e3fvLhhjmKH9cJu93ef25dlL4nszOY2cNYBfNyN3JGZd6YV9B3oyHAs3lJEXib7x-hoL9dLFSbvlTgJ_GLmFu6JbWEOXCCcU5qBaowfAJly2vC6Hzxy-cKhyOOPQ4nDBoc3hA4cTDqccys3A64lOfKI66XG4HzhQiUKfAyYrzbWh5Edq3zT7w-lQ7Q_MvjkY_tSIGloOORyl7R9TJz-lItfnqdTMYWhir9miPBPsG4evHCoczrEBDsccGojjjMMWhxzXOeNDi5RAMdfnCfNxCQOQFYlK2nUFylMdRyJM-poXDeNSzD0K126oustPPKpFdWiDzJh3MaPx1PcBq2-eQiSvsQWGxUAQ_o7V8V1EaikIYiupxloJZrnKVKntcV_mzkRf4oaCxvLUm0RCbzrJpNy0qWpTBBl2tbMuSD-Qt2O8MAHenuH1IEpGTgV7lD9ZV0JVpWTXeiRvBNV6LVQ2pejk1XH_cULSY26jWSAcGAi_P8_ymiFxMEOdJzzlBxcOLvYgGzSgdsNJtbdJdVskbBIFEm9TVGfLNFE5OrpNYodEkcSbRSQzBDUQNRo9paxAW3Ryl8QeiX0S7_6pJOKBrTNFAmaMSWB5lgRssCcErjAD1PFdSdP4g4p8RuI9ieckrnL_xeMfOvudxEsSL1Soq_8h0qWjr-I5KEJU06vXxC5jxlhnod2zla6pYUvx1UzxVbNw2bgKuLZx7eAq4trFtYdrnzD57LZCMRHqvetKGS3aqVkU07KzWmJ12RuxxNGssOVWnqmHpR-2fkClfrZIwhrDHrT096wx1S_9ufTVKx3r7YBlUbny673KHezJm65U_0UEBQ5cYu92h8NIffM5-Ghi-MtknfkDBjm18hoUfyQycRYCbQICQdWvMxuHA7P2dUDW84KJeyvDPluCtqlEUyP--5ag8C7sGszm0kh4QQqWQblLUXil7GJcnQxmS4F45-w9AwzMpzyB_AvaUCVLywgAAA%3D%3D
+
