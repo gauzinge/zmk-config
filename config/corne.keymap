@@ -142,7 +142,7 @@ ZMK_BEHAVIOR(tab_bk, tri_state,
 
 //tap for space, hold for SYM, double tap for dot space
 ZMK_BEHAVIOR(sp_dot_sym, tap_dance,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <100>;
     bindings = <&lt SYM SPACE>, <&dot_spc>;
 )
 
@@ -200,14 +200,14 @@ ZMK_BEHAVIOR(dsk_cycle, tap_dance,
     bindings = <NEXT_DSK>, <PREV_DSK>;
 )
 
-ZMK_BEHAVIOR(tab_cycle, tap_dance,
+/*ZMK_BEHAVIOR(tab_cycle, tap_dance,
     tapping-term-ms = <200>;
     bindings = <TAB_SWAP>, <TAB_BK>;
 )
 ZMK_BEHAVIOR(app_cycle, tap_dance,
     tapping-term-ms = <200>;
     bindings = <APP_SWAP>, <APP_BK>;
-)
+)*/
 
 ZMK_BEHAVIOR(copy_cut, tap_dance,
     tapping-term-ms = <200>;
@@ -265,7 +265,7 @@ ZMK_LAYER(default,
 
 ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             ___        &dsk_cycle       ___        &app_cycle       ___        &tab_cycle         &copy_cut     &udo_rdo         ___           ___         &kp PST         ___ 
+             ___        &dsk_cycle       APP_BK      APP_SWAP       TAB_BK       TAB_SWAP         &copy_cut     &udo_rdo         ___           ___         &kp PST         ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              ___          &kp LCTRL      &kp LALT    &kp LGUI     &kp LSHFT         ___            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       ___           ___
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
