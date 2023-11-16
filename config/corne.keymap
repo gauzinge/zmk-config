@@ -19,6 +19,31 @@
 #define SYM 3
 #define SYS 4
 
+#define TAB_SWAP &tab
+#define TAB_BK &tab_bk
+//OSX
+// #define PREV_DSK &kp LC(LEFT)
+// #define NEXT_DSK &kp LC(RIGHT)
+// #define APP_SWAP &swapper_mac
+// #define APP_BK &swapper_mac_bk
+// #define CP LG(C)
+// #define CT LG(X)
+// #define PST LG(V)
+// #define UDO LG(Z)
+// #define RDO LS(LG(Z))
+
+//WIN
+#define PREV_DSK &kp LC(LG(LEFT))
+#define NEXT_DSK &kp LC(LG(RIGHT))
+#define APP_SWAP &swapper_win
+#define APP_BK &swapper_win_bk
+#define CP LC(C)
+#define CT LC(X)
+#define PST LC(V)
+#define UDO LC(Z)
+#define RDO LS(LC(Z))
+
+
 /*#include "combos.dtsi"  // requires layer aliases*/
 /*#include "extra_keys.h"*/
 
@@ -180,29 +205,6 @@ ZMK_COMBO(combo_sym_under,  &kp UNDER,  LB1 RB1, ALL)  // under, all layers
 ZMK_COMBO(combo_capsword,  &caps_word,  LB5 RB5, ALL)  // capsword, both shifts, all layers
 ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shifts, all layers
 
-#define TAB_SWAP &tab
-#define TAB_BK &tab_bk
-//OSX
-// #define PREV_DSK &kp LC(LEFT)
-// #define NEXT_DSK &kp LC(RIGHT)
-// #define APP_SWAP &swapper_mac
-// #define APP_BK &swapper_mac_bk
-// #define CP LG(C)
-// #define CT LG(X)
-// #define PST LG(V)
-// #define UDO LG(Z)
-// #define RDO LS(LG(Z))
-
-//WIN
-#define PREV_DSK &kp LC(LG(LEFT))
-#define NEXT_DSK &kp LC(LG(RIGHT))
-#define APP_SWAP &swapper_win
-#define APP_BK &swapper_win_bk
-#define CP LC(C)
-#define CT LC(X)
-#define PST LC(V)
-#define UDO LC(Z)
-#define RDO LS(LC(Z))
 
 ZMK_BEHAVIOR(dsk_cycle, tap_dance,
     tapping-term-ms = <200>;
@@ -219,34 +221,6 @@ ZMK_BEHAVIOR(udo_rdo, tap_dance,
     bindings = <&kp UDO>, <&kp RDO>;
 )
 
-ZMK_BEHAVIOR(hm_scrl, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <250>;
-    quick-tap-ms = <QUICK_TAP_MS>;                 // repeat on tap-into-hold
-    require-prior-idle-ms = <100>;
-    bindings = <&kp>, <&scrl_ena>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;             // delay positional check until key-release
-)
-
-ZMK_BEHAVIOR(scrl_ena, tap_dance,
-    tapping-term-ms = <150>;
-    bindings = <&kp J>, <&kp LG(LS(J))>;
-)
-
-ZMK_BEHAVIOR(hm_find, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <250>;
-    quick-tap-ms = <QUICK_TAP_MS>;                 // repeat on tap-into-hold
-    require-prior-idle-ms = <100>;
-    bindings = <&kp>, <&hmrw_find>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;             // delay positional check until key-release
-)
-ZMK_BEHAVIOR(hmrw_find, tap_dance,
-    tapping-term-ms = <150>;
-    bindings = <&kp F>, <&kp LG(LS(SPACE))>;
-)
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(NAV NUM, SYS)  // NAV + SYM --> SYS
@@ -255,11 +229,11 @@ ZMK_LAYER(default,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp ESC         &kp Q         &kp W         &kp E         &kp R           &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P       &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &mt LS(LALT) TAB &hml LCTRL A   &hml LALT S   &hml LGUI D &hm_find LSHFT 0     &kp G          &kp H     &hm_scrl RSHFT 0  &hmr LGUI K   &hmr LALT L  &hms LCTRL 0  &kp SQT
+       &mt LS(LALT) TAB &hml LCTRL A   &hml LALT S   &hml LGUI D &hml LSHFT F  &mt LS(LG) G          &kp H      &hmr RSHFT J  &hmr LGUI K   &hmr LALT L   &hms LCTRL 0   &kp SQT
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                   &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET      &sp_dot_sym   &bs_del_num  &mt LALT RPAR  
+                                                   &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &lt SYM SPACE  &bs_del_num  &mt LALT RPAR  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
