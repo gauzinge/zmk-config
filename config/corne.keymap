@@ -31,6 +31,7 @@
 // #define PST LG(V)
 // #define UDO LG(Z)
 // #define RDO LS(LG(Z))
+// #define MOVE_MSG &move_outlook_mac
 
 //WIN
 #define PREV_DSK &kp LC(LG(LEFT))
@@ -42,6 +43,7 @@
 #define PST LC(V)
 #define UDO LC(Z)
 #define RDO LS(LC(Z))
+#define MOVE_MSG &move_outlook_win
 
 
 /*#include "combos.dtsi"  // requires layer aliases*/
@@ -82,7 +84,7 @@ ZMK_BEHAVIOR(hml, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <250>;
     quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
-    require-prior-idle-ms = <100>;
+    require-prior-idle-ms = <140>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;             // delay positional check until key-release
@@ -92,7 +94,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <250>;
     quick-tap-ms = <QUICK_TAP_MS>;                 // repeat on tap-into-hold
-    require-prior-idle-ms = <100>;
+    require-prior-idle-ms = <140>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;             // delay positional check until key-release
@@ -102,7 +104,7 @@ ZMK_BEHAVIOR(hms, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <250>;
     quick-tap-ms = <QUICK_TAP_MS>;                 // repeat on tap-into-hold
-    require-prior-idle-ms = <100>;
+    require-prior-idle-ms = <140>;
     bindings = <&kp>, <&col_semi_inner>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;             // delay positional check until key-release
@@ -221,6 +223,14 @@ ZMK_BEHAVIOR(udo_rdo, tap_dance,
     bindings = <&kp UDO>, <&kp RDO>;
 )
 
+ZMK_BEHAVIOR(move_outlook_win, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp M>, <&kp LS(LC(V))>;
+)
+ZMK_BEHAVIOR(move_outlook_mac, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp M>, <&kp LS(LG(M))>;
+)
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(NAV NUM, SYS)  // NAV + SYM --> SYS
@@ -231,7 +241,7 @@ ZMK_LAYER(default,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &mt LS(LALT) TAB &hml LCTRL A   &hml LALT S   &hml LGUI D &hml LSHFT F  &mt LS(LGUI) G        &kp H      &hmr RSHFT J  &hmr LGUI K   &hmr LALT L   &hms LCTRL 0   &kp SQT
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
+          &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         MOVE_MSG       &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                    &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &lt SYM SPACE  &bs_del_num  &mt LALT RPAR  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
