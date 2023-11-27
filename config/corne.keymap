@@ -44,7 +44,7 @@
 #define UDO LC(Z)
 #define RDO LS(LC(Z))
 // #define MOVE_MSG &move_outlook_win
-#define MOVE_MSG &mt LS(LC(V)) M
+#define MOVE_MSG &kp LS(LC(V))
 
 
 /*#include "combos.dtsi"  // requires layer aliases*/
