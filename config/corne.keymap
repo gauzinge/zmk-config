@@ -43,7 +43,8 @@
 #define PST LC(V)
 #define UDO LC(Z)
 #define RDO LS(LC(Z))
-#define MOVE_MSG &move_outlook_win
+// #define MOVE_MSG &move_outlook_win
+#define MOVE_MSG &mt LS(LC(V)) M
 
 
 /*#include "combos.dtsi"  // requires layer aliases*/
@@ -72,6 +73,11 @@
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
+&mt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
 /*custom behaviors*/
 
 // homerow mods
