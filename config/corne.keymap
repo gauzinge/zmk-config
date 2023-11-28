@@ -22,30 +22,29 @@
 #define TAB_SWAP &tab
 #define TAB_BK &tab_bk
 //OSX
-// #define PREV_DSK &kp LC(LEFT)
-// #define NEXT_DSK &kp LC(RIGHT)
-// #define APP_SWAP &swapper_mac
-// #define APP_BK &swapper_mac_bk
-// #define CP LG(C)
-// #define CT LG(X)
-// #define PST LG(V)
-// #define UDO LG(Z)
-// #define RDO LS(LG(Z))
-// #define MOVE_MSG &move_outlook_mac
+#define PREV_DSK &kp LC(LEFT)
+#define NEXT_DSK &kp LC(RIGHT)
+#define APP_SWAP &swapper_mac
+#define APP_BK &swapper_mac_bk
+#define CP LG(C)
+#define CT LG(X)
+#define PST LG(V)
+#define UDO LG(Z)
+#define RDO LS(LG(Z))
+#define MOVE_MSG &kp LS(LG(M))
 
 //WIN
-#define PREV_DSK &kp LC(LG(LEFT))
-#define NEXT_DSK &kp LC(LG(RIGHT))
-#define APP_SWAP &swapper_win
-#define APP_BK &swapper_win_bk
-#define CP LC(C)
-#define CT LC(X)
-#define PST LC(V)
-#define UDO LC(Z)
-#define RDO LS(LC(Z))
-// #define MOVE_MSG &move_outlook_win
-#define MOVE_MSG &kp LS(LC(V))
-
+// #define PREV_DSK &kp LC(LG(LEFT))
+// #define NEXT_DSK &kp LC(LG(RIGHT))
+// #define APP_SWAP &swapper_win
+// #define APP_BK &swapper_win_bk
+// #define CP LC(C)
+// #define CT LC(X)
+// #define PST LC(V)
+// #define UDO LC(Z)
+// #define RDO LS(LC(Z))
+// #define MOVE_MSG &kp LS(LC(V))
+//
 
 /*#include "combos.dtsi"  // requires layer aliases*/
 /*#include "extra_keys.h"*/
@@ -122,15 +121,6 @@ ZMK_BEHAVIOR(col_semi_inner, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: backspace | shift + tap: delete | hold: num layer
-// ZMK_BEHAVIOR(bs_del_num, mod_morph,
-//     bindings = <&lt NUM &bs_del_num_inner>, <&kp DEL>;
-//     mods = <(MOD_LSFT|MOD_RSFT)>;
-// )
-// ZMK_BEHAVIOR(bs_del_num_inner, tap_dance,
-//      tapping-term-ms = <200>;
-//      bindings = <&kp BSPC>, <&to NUM>;
-// )
-// tap: backspace | shift + tap: delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
     bindings = <&lt NUM BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -182,36 +172,11 @@ ZMK_BEHAVIOR(tab_bk, tri_state,
     ignored-key-positions = <LT2>;
 )
 
-//tap for space, hold for SYM, double tap for dot space
-ZMK_BEHAVIOR(sp_dot_sym, tap_dance,
-    tapping-term-ms = <250>;
-    bindings = <&lt SYM SPACE>, <&dot_spc>;
-)
-
-ZMK_BEHAVIOR(dot_spc, macro,
-    wait-ms = <0>;
-    tap-ms = <5>;
-    bindings = <&kp DOT &kp SPACE>;
-)
-
 //normal: tilde, shift: grave
 ZMK_BEHAVIOR(tilde_grave, mod_morph,
     bindings = <&kp TILDE>, <&kp GRAVE>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
-
-#undef COMBO_TERM
-#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(combo_copy,   &kp LG(C),  LB3 LB4, ALL)  // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste,  &kp LG(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_tab,  &kp TAB,  LT3 LT4, ALL)  // esc
-ZMK_COMBO(combo_esc,  &kp ESC,  RM1 RM2, ALL)  // esc
-ZMK_COMBO(combo_bsp,  &kp BSPC,  RT3 RT4, ALL)  // backspace
-ZMK_COMBO(combo_quotes,  &kp SQT,  RM3 RM4, DEF)  // quotes, only on default
-ZMK_COMBO(combo_sym_minus,  &kp MINUS,  LT1 RT1, ALL)  // minus, all layers
-ZMK_COMBO(combo_sym_under,  &kp UNDER,  LB1 RB1, ALL)  // under, all layers
-ZMK_COMBO(combo_capsword,  &caps_word,  LB5 RB5, ALL)  // capsword, both shifts, all layers
-ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shifts, all layers
 
 
 ZMK_BEHAVIOR(dsk_cycle, tap_dance,
@@ -229,14 +194,19 @@ ZMK_BEHAVIOR(udo_rdo, tap_dance,
     bindings = <&kp UDO>, <&kp RDO>;
 )
 
-ZMK_BEHAVIOR(move_outlook_win, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&kp M>, <&kp LS(LC(V))>;
-)
-ZMK_BEHAVIOR(move_outlook_mac, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&kp M>, <&kp LS(LG(M))>;
-)
+#undef COMBO_TERM
+#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
+ZMK_COMBO(combo_copy,   &kp LG(C),  LB3 LB4, ALL)  // Ctrl + C, active on all layers
+ZMK_COMBO(combo_paste,  &kp LG(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_tab,  &kp TAB,  LT3 LT4, ALL)  // esc
+ZMK_COMBO(combo_esc,  &kp ESC,  RM1 RM2, ALL)  // esc
+ZMK_COMBO(combo_bsp,  &kp BSPC,  RT3 RT4, ALL)  // backspace
+ZMK_COMBO(combo_quotes,  &kp SQT,  RM3 RM4, DEF)  // quotes, only on default
+ZMK_COMBO(combo_sym_minus,  &kp MINUS,  LT1 RT1, ALL)  // minus, all layers
+ZMK_COMBO(combo_sym_under,  &kp UNDER,  LB1 RB1, ALL)  // under, all layers
+ZMK_COMBO(combo_capsword,  &caps_word,  LB5 RB5, ALL)  // capsword, both shifts, all layers
+ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shifts, all layers
+
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(NAV NUM, SYS)  // NAV + SYM --> SYS
@@ -300,3 +270,15 @@ ZMK_LAYER(sys,
                                                        ___            ___          ___                ___        ___            ___
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
+
+// ZMK_LAYER(comk,
+//      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+//        &mt LS(LGUI) ESC    &kp Q         &kp W         &kp F         &kp P        &kp B              &kp J         &kp L         &kp U         &kp Y         &kp SEMI       &bs_del
+//      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+//        &mt LS(LALT) TAB &hml LCTRL A   &hml LALT R   &hml LGUI S &hml LSHFT T     &kp G              &kp M      &hmr RSHFT N  &hmr LGUI E   &hmr LALT I   &hms LCTRL 0   &kp SQT
+//      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+//           &smart_shft     &kp Z         &kp X         &kp C         &kp D         &kp V              &kp K        &kp H      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
+//      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+//                                                    &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &lt SYM SPACE  &bs_del_num  &mt LALT RPAR  
+//      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+// )
