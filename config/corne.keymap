@@ -21,11 +21,12 @@
 
 #define TAB_SWAP &tab
 #define TAB_BK &tab_bk
+#define APP_SWAP &swapper
+#define APP_BK &swapper_bk
+
 //OSX
 // #define PREV_DSK &kp LC(LEFT)
 // #define NEXT_DSK &kp LC(RIGHT)
-// #define APP_SWAP &swapper_mac
-// #define APP_BK &swapper_mac_bk
 // #define CP LG(C)
 // #define CT LG(X)
 // #define PST LG(V)
@@ -36,8 +37,6 @@
 //WIN
 #define PREV_DSK &kp LC(LG(LEFT))
 #define NEXT_DSK &kp LC(LG(RIGHT))
-#define APP_SWAP &swapper_win
-#define APP_BK &swapper_win_bk
 #define CP LC(C)
 #define CT LC(X)
 #define PST LC(V)
@@ -144,21 +143,12 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
     continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z UNDERSCORE MINUS>;
 };                                                                                                                       // Alt+Tab swapper, requires PR #1366
 
-ZMK_BEHAVIOR(swapper_mac, tri_state,
-    bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-    ignored-key-positions = <LT2>;
-)
 
-ZMK_BEHAVIOR(swapper_mac_bk, tri_state,
-    bindings = <&kt LS(LGUI)>, <&kp TAB>, <&kt LS(LGUI)>;
-    ignored-key-positions = <LT2>;
-)
-
-ZMK_BEHAVIOR(swapper_win, tri_state,
+ZMK_BEHAVIOR(swapper, tri_state,
     bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
     ignored-key-positions = <LT2>;
 )
-ZMK_BEHAVIOR(swapper_win_bk, tri_state,
+ZMK_BEHAVIOR(swapper_bk, tri_state,
     bindings = <&kt LS(LALT)>, <&kp TAB>, <&kt LS(LALT)>;
     ignored-key-positions = <LT2>;
 )
