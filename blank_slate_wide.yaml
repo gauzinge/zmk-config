@@ -17,14 +17,14 @@ layers:
     - [ "Undo/Redo", "Cut", "Cpy", "Paste", null, null, null,"Move MSG" , null , null , null , null]
     - [null, null, null,{type: held}, null,  {t: Space, h: Ctrl}, {t: BSpace, h: NUM}, Alt, Ctrl,Shift]
   NUM:
-    - [ "-", "1", "2", "3", "+",null, "Bsp", null, null, null, null, null]
+    - [ "-", "1", "2", "3", "+",Esc, "Bsp", null, null, null, null, null]
     - ["/", "4", "5", "6", "*", Tab, null, null, Shift, Gui, Alt, Ctrl]
-    - [".", "7", "8", "9", "=", null, null, null, null, null, null, null]
+    - [".", "7", "8", "9", "=", "-", "+", null, null, null, null, null]
     - [null, "(", {t: "0", h: Gui},")", Ctrl,null, {type: held},  null,null,null]
   SYM:
     - ["`", "!", "@", "#", "\/",Esc,  "Bsp", null, null, null, null, null]
     - ["|", "^", "%", "$", "\\", Tab, null,null,  Shift, Gui, Alt, Ctrl]
-    - [ "_", "&", "*", "(", ")", null, null, null, null, null, null, null]
+    - [ "_", "&", "*", "(", ")", "-", "+", null, null, null, null, null]
     - ["[", "]","{", "}", null, {type: held}, null, null, null, null]
  
   SYS:
