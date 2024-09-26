@@ -50,7 +50,7 @@
 
 /*layers and shortcuts*/
 #define XXX &none
-#define XXX &trans
+#define ___ &trans
 
 /* Global settings */
 
