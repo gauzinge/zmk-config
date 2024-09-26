@@ -1,0 +1,51 @@
+layout:
+  ortho_layout:
+    split: false
+    rows: 4
+    columns: 12
+    thumbs: 2x2u  # also try "2x2u" with one fewer key on the last row
+
+layers:
+  DEF:
+    - [Q, W, E, R, T,Esc,Bsp, Y, U, I, O,  {h: LAN, t: P}]
+    - [{h: Ctrl, t: A}, {h: Alt, t: S}, D , {h: Shift, t: F}, G,Tab,"'", H, {h: Shift, t: J}, K , {h: Alt, t: L}, {h: Ctrl, t: ":"}]
+    - [Z, X, C, V, B, Shift,Ctrl, N, M, ",", ., /]
+    - [Shift, Alt, {h: Gui,   t: (}, {h: NAV,  t: Tab}, {h: Ctrl,   t: Enter}, {h: SYM,   t: Space}, {h: NUM, t: BSpace}, {h: Alt,   t: )}, Ctrl, Shift]
+  NAV:
+    - [ null, "Dskt", "App nxt", "Tab nxt", null,Esc, "Bsp", "Cpy/Cut", "Undo/Redo", null, null, Paste]
+    - [ Ctrl, Alt, Gui, Shift, null,Tab,null, Left, Down, Up, Right, null]
+    - [ "Undo/Redo", "Cut", "Cpy", "Paste", null, null, null,"Move MSG" , null , null , null , null]
+    - [null, null, null,{type: held}, null,  {t: Space, h: Ctrl}, {t: BSpace, h: NUM}, Alt, Ctrl,Shift]
+  NUM:
+    - [ "-", "1", "2", "3", "+",null, "Bsp", null, null, null, null, null]
+    - ["/", "4", "5", "6", "*", Tab, null, null, Shift, Gui, Alt, Ctrl]
+    - [".", "7", "8", "9", "=", null, null, null, null, null, null, null]
+    - [null, "(", {t: "0", h: Gui},")", Ctrl,null, {type: held},  null,null,null]
+  SYM:
+    - ["`", "!", "@", "#", "\/",Esc,  "Bsp", null, null, null, null, null]
+    - ["|", "^", "%", "$", "\\", Tab, null,null,  Shift, Gui, Alt, Ctrl]
+    - [ "_", "&", "*", "(", ")", null, null, null, null, null, null, null]
+    - ["[", "]","{", "}", null, {type: held}, null, null, null, null]
+ 
+  SYS:
+    - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12]
+    - [null, "reset", "boot", null, null,  null, "Mic Toggle", "Vol Up", null , null , "reset", null]
+    - [null, "BT0", "BT1", "BT2", "BT CLR", null, "Spk Mute",  "Vol Down", null, null , null, null]
+    - [null, null , null, {type: held}, null, null, {type: held}, null, null, null]
+
+  LAN:
+    - ["`" , null , "e", null, null, Esc, "Bsp", "u" , null, "o", null, {type: held}]
+    - [ "a", "s", null, null, null,Tab, null, null, null, null, null, null]
+    - [null, null , null, null, null, null, null, null, null, null, null, null]
+    - [Shift, Alt , null, null, null, null, null, null, Ctrl, Shift]
+
+combos:
+  - {p: [0, 1], k: Tab, l: ["DEF"]}
+  - {p: [10, 11], k: Bsp, l: ["DEF"]}
+  - {p: [20, 21],   k: Esc, l: ["DEF"]}
+  - {p: [15, 20], k: "caps_word", l: ["DEF"]}
+  - {p: [22, 23], k: "'", l: ["DEF"]}
+  - {p: [3, 8], k: "-", l: ["DEF"]}
+  - {p: [27, 32], k: "_", l: ["DEF"]}
+  - {p: [24, 25], k: "copy", l: ["DEF"]}
+  - {p: [26, 27], k: "paste", l: ["DEF"]}
