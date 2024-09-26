@@ -123,7 +123,11 @@ ZMK_BEHAVIOR(col_semi_inner, mod_morph,
 
 // tap: backspace | shift + tap: delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&lt NUM BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>;) tap: backspace | shift + tap: delete | hold: num layer ZMK_BEHAVIOR(bs_del_num, mod_morph, bindings = <&lt NUM BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+    bindings = <&lt NUM BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+
 // tap: backspace | shift + tap: delete 
 ZMK_BEHAVIOR(bs_del, mod_morph,
     bindings = <&kp BSPC>, <&kp DEL>;
@@ -210,7 +214,7 @@ ZMK_LAYER(default,
                                                    &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &lt SYM SPACE  &bs_del_num  &mt LALT RPAR  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
-/*
+
 ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
              ___             ___       &dsk_cycle     APP_SWAP     TAB_SWAP         ___            &copy_cut      &udo_rdo         ___           ___        &kp PST         ___
@@ -270,15 +274,3 @@ ZMK_LAYER(lan,
                                                        ___           ___           ___               ___           ___           ___  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
-*/
-// ZMK_LAYER(comk,
-//      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-//        &mt LS(LGUI) ESC    &kp Q         &kp W         &kp F         &kp P        &kp B              &kp J         &kp L         &kp U         &kp Y         &kp SEMI       &bs_del
-//      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//        &mt LS(LALT) TAB &hml LCTRL A   &hml LALT R   &hml LGUI S &hml LSHFT T     &kp G              &kp M      &hmr RSHFT N  &hmr LGUI E   &hmr LALT I   &hms LCTRL 0   &kp SQT
-//      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//           &smart_shft     &kp Z         &kp X         &kp C         &kp D         &kp V              &kp K        &kp H      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
-//      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//                                                    &mt LGUI LPAR  &lt NAV TAB  &mt LCTRL RET     &lt SYM SPACE  &bs_del_num  &mt LALT RPAR  
-//      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-// )
