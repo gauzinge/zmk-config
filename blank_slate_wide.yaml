@@ -9,7 +9,7 @@ layers:
   DEF:
     - [Q, W, E, R, T,Esc,Bsp, Y, U, I, O,  {h: LAN, t: P}]
     - [{h: Ctrl, t: A}, {h: Alt, t: S}, D , {h: Shift, t: F}, G,Tab,"'", H, {h: Shift, t: J}, K , {h: Alt, t: L}, {h: Ctrl, t: ":"}]
-    - [Z, X, C, V, B, Shift,Ctrl, N, M, ",", ., /]
+    - [Z, X, C, V, B, "-","+", N, M, ",", ., /]
     - [Shift, Alt, {h: Gui,   t: (}, {h: NAV,  t: Tab}, {h: Ctrl,   t: Enter}, {h: SYM,   t: Space}, {h: NUM, t: BSpace}, {h: Alt,   t: )}, Ctrl, Shift]
   NAV:
     - [ null, "Dskt", "App nxt", "Tab nxt", null,Esc, "Bsp", "Cpy/Cut", "Undo/Redo", null, null, Paste]
