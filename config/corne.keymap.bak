@@ -23,7 +23,7 @@
 
 /*layers and shortcuts*/
 #define XXX &none
-#define ___ &trans
+#define XXX &trans
 
 /* Global settings */
 
@@ -122,14 +122,14 @@ ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp ESC         &kp F1        &kp F2       &kp F3         &kp F4        &kp F5            &kp F6        &kp F7        &kp F8        &kp F9         &kp DEL      &kp BSPC
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          // &kp TAB      &hml LGUI F10 &hml LALT F11 &hml LCTRL F12 &hml LSHFT LSHIFT &kp CAPS         &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT     &kp LGUI        ___ 
-         &kp TAB      &hml LCTRL F10 &hml LALT F11 &hml LGUI F12 &hml LSHFT LSHIFT &kp CAPS       &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT       &kp LCTRL     ___
+          // &kp TAB      &hml LGUI F10 &hml LALT F11 &hml LCTRL F12 &hml LSHFT LSHIFT &kp CAPS         &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT     &kp LGUI        XXX 
+         &kp TAB      &hml LCTRL F10 &hml LALT F11 &hml LGUI F12 &hml LSHFT LSHIFT &kp CAPS       &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT       &kp LCTRL     XXX
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       // &smart_shft      &kp LC(Z)     &kp LC(X)    &kp LC(C)      &kp LC(V)    &caps_word             ___       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END  &smart_shft
-          &smart_shft      &kp LG(Z)     &kp LG(X)    &kp LG(C)      &kp LG(V)    &caps_word             ___       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END  &smart_shft
+       // &smart_shft      &kp LC(Z)     &kp LC(X)    &kp LC(C)      &kp LC(V)    &caps_word             XXX       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END  &smart_shft
+          &smart_shft      &kp LG(Z)     &kp LG(X)    &kp LG(C)      &kp LG(V)    &caps_word             XXX       &kp HOME    &kp PAGE_DOWN &kp PAGE_UP      &kp END  &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                     ___         &mt LGUI LPAR    &kp RET           &kp LCTRL  &mt LALT RPAR    &kp LCTRL       
-                                                     // ___         &mt LCTRL LPAR    &kp RET       &kp SPACE  &mt LALT RPAR &kp LCTRL      
+                                                     XXX         &mt LGUI LPAR    &kp RET           &kp LCTRL  &mt LALT RPAR    &kp LCTRL       
+                                                     // XXX         &mt LCTRL LPAR    &kp RET       &kp SPACE  &mt LALT RPAR &kp LCTRL      
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -141,19 +141,19 @@ ZMK_LAYER(num,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft    &kp EQUAL       &kp MINUS    &kp PLUS       &kp LBKT     &kp LBRC          &kp RBRC      &kp RBKT      &kp COMMA      &kp DOT      &kp BSLH    &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                        ___      &mt LGUI LPAR    &kp LCTRL           &kp SPACE  &mt LALT RPAR     ___
-                                                        // ___      &mt LCTRL LPAR  &kp LCTRL           &kp SPACE  &mt LALT RPAR     ___
+                                                        XXX      &mt LGUI LPAR    &kp LCTRL           &kp SPACE  &mt LALT RPAR     XXX
+                                                        // XXX      &mt LCTRL LPAR  &kp LCTRL           &kp SPACE  &mt LALT RPAR     XXX
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
 ZMK_LAYER(sys,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp TAB      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_CLR         ___               ___           ___            ___          ___           ___           ___
+          &kp TAB      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_CLR         XXX               XXX           XXX            XXX          XXX           XXX           XXX
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &sys_reset    &bootloader     ___           ___             ___          ___               ___           ___            ___       &kp K_LOCK    &bootloader   &sys_reset
+          &sys_reset    &bootloader     XXX           XXX             XXX          XXX               XXX           XXX            XXX       &kp K_LOCK    &bootloader   &sys_reset
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             ___           ___         ___           ___             ___          ___          &kp LG(LS(M))  &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    ___             ___
+             XXX           XXX         XXX           XXX             XXX          XXX          &kp LG(LS(M))  &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    XXX             XXX
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                       ___            ___          ___                ___        ___            ___
+                                                       XXX            XXX          XXX                XXX        XXX            XXX
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
