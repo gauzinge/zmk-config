@@ -105,7 +105,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     hold-trigger-on-release;             // delay positional check until key-release
 )
 
-/*ZMK_BEHAVIOR(hms, hold_tap,
+ZMK_BEHAVIOR(hms, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <250>;
     quick-tap-ms = <QUICK_TAP_MS>;                 // repeat on tap-into-hold
@@ -114,7 +114,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;             // delay positional check until key-release
 )
-*/
+
 
 //normal: tilde, shift: grave
 ZMK_BEHAVIOR(col_semi_inner, mod_morph,
