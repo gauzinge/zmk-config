@@ -195,7 +195,7 @@ ZMK_COMBO(combo_bsp,  &kp BSPC,  RT4 RT5, ALL)  // backspace
 ZMK_COMBO(combo_quotes,  &kp SQT,  RM4 RM5, DEF)  // quotes, only on default
 ZMK_COMBO(combo_sym_minus,  &kp MINUS,  LT2 RT2, ALL)  // minus, all layers
 ZMK_COMBO(combo_sym_under,  &kp UNDER,  LB2 RB2, ALL)  // under, all layers
-ZMK_COMBO(combo_capsword,  &caps_word,  LB6 RB6, ALL)  // capsword, both shifts, all layers
+ZMK_COMBO(combo_capsword,  &caps_word,  LH4 RH4, ALL)  // capsword, both shifts, all layers
 ZMK_COMBO(combo_capsword,  &caps_word,  LM2 RM2, ALL)  // capsword, both hrm shifts, all layers
 
 /* Keymap */
