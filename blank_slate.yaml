@@ -1,69 +1,43 @@
 layout:
-  qmk_keyboard: corne_rotated
-  qmk_layout: LAYOUT_split_3x6_3
+  ortho_layout:
+    split: false
+    rows: 4
+    columns: 12
+    thumbs: 2x2u  # also try "2x2u" with one fewer key on the last row
+
 layers:
   DEF:
     - [Tab, Q, W, E, R, T, Y, U, I, O, P, BSpace]
-    - [Esc, {h: Ctrl, t: A}, {h: Alt, t: S}, D , {h: Shift, t: F}, G, H, {h: Shift, t: J}, K , {h: Alt, t: L}, {h: Ctrl, t: ";"}, {h: LAN, t: "'"}]
+    - [Esc, {h: Ctrl, t: A}, {h: Alt, t: S}, D , {h: Shift, t: F}, G, H, {h: Shift, t: J}, K , {h: Alt, t: L}, {h: Ctrl, t: ":"}, {h: LAN, t: "'"}]
     - [Shift, Z, X, C, V, B, N, M, ",", ., /, Shift]
-    - {h: Gui,   t: (}
-    - {h: NAV,  t: Tab}
-    - {h: Ctrl,   t: Enter}
-    - {h: SYM,   t: Space}
-    - {h: NUM, t: BSpace}
-    - {h: Alt,   t: )}
+    - [Ctrl, Alt, {h: Gui,   t: (}, {h: NAV,  t: Tab}, {h: Ctrl,   t: Enter}, {h: SYM,   t: Space}, {h: NUM, t: BSpace}, {h: Alt,   t: )}, "-", "+"]
   NAV:
     - [null , null, "Dskt", "App nxt", "Tab nxt", null, "Cpy/Cut", "Undo/Redo", null, null, Paste, null]
     - [null, Ctrl, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
     - [null, "Undo/Redo", "Cut", "Cpy", "Paste", null,"Move MSG" , null , null , null , null, null]
-    - null
-    - {type: held}
-    - null
-    - {t: Space, h: Ctrl}
-    - {t: BSpace, h: NUM}
-    - Alt
+    - [null, null, null,{type: held}, null,  {t: Space, h: Ctrl}, {t: BSpace, h: NUM}, Alt, null,null]
   NUM:
     - [null, "-", "1", "2", "3", "+", null, null, null, null, null, null]
     - [null, "/", "4", "5", "6", "*", null, Shift, Gui, Alt, Ctrl, null]
     - [null, ".", "7", "8", "9", "=", null, null, null, null, null, null]
-    - {t: "(", h: Gui}
-    - "0"
-    - {t: ")", h: Ctrl}
-    - null
-    - {type: held}
-    - null
+    - [null, null, {t: "(", h: Gui}, "0", {t: ")", h: Ctrl},null, {type: held},  null,null,null]
   SYM:
     - [null, "`", "!", "@", "#", "\/", null, null, null, null, null, null]
     - [null, "|", "^", "%", "$", "\\", null, Shift, Gui, Alt, Ctrl, null]
     - [null, "_", "&", "*", "(", ")", null, null, null, null, null, null]
-    - "["
-    - "]"
-    - "{"
-    - {type: held}
-    - null
-    - null
+    - [null, null, "[", "]", "{", {type: held}, null, null, null, null]
  
   SYS:
     - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12]
     - [null, "reset", "boot", null, null,  null, "Mic Toggle", "Vol Up", null , null , "reset", null]
     - [null, "BT0", "BT1", "BT2", "BT CLR", null, "Spk Mute",  "Vol Down", null, null , null, null]
-    - null
-    - {type: held}
-    - null
-    - null
-    - {type: held}
-    - null
+    - [null, null , null, {type: held}, null, null, {type: held}, null, null, null]
 
   LAN:
     - ["`", null , null , "e", null, null, null, "u" , null, "o", null, "BSpace"]
     - [null, "a", "s", null, null, null, null, null, null, null, null, {type: held}]
     - [Shift, null , null, null, null, null, null, null, null, null, null, Shift]
-    - null 
-    - null 
-    - null 
-    - null 
-    - null
-    - null
+    - [null, null , null, null, null, null, null, null, null, null]
 
 combos:
   - {p: [1, 2], k: Tab, l: ["DEF"]}
@@ -75,4 +49,3 @@ combos:
   - {p: [28, 31], k: "_", l: ["DEF"]}
   - {p: [25, 26], k: "copy", l: ["DEF"]}
   - {p: [27, 28], k: "paste", l: ["DEF"]}
-
