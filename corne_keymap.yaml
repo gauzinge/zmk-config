@@ -14,7 +14,7 @@ layers:
     - {h: Alt,   t: )}
   NAV:
     - [null , null, "Dskt", "App nxt", "Tab nxt", null, "Cpy/Cut", "Undo/Redo", null, null, Paste, null]
-    - [null, Ctrl, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
+    - [null, {h: Ctrl, t: All}, Alt, Gui, Shift, null, Left, Down, Up, Right, null, null]
     - [null, "Undo/Redo", "Cut", "Cpy", "Paste", null,"Move MSG" , null , null , null , null, null]
     - null
     - {type: held}

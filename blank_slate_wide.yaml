@@ -13,7 +13,7 @@ layers:
     - [Shift, Alt, {h: Gui,   t: (}, {h: NAV,  t: Tab}, {h: Ctrl,   t: Enter}, {h: SYM,   t: Space}, {h: NUM, t: BSpace}, {h: Alt,   t: )}, Ctrl, Shift]
   NAV:
     - [ null, "Dskt", "App nxt", "Tab nxt", null,Esc, "Bsp", "Cpy/Cut", "Undo/Redo", null, null, Paste]
-    - [ Ctrl, Alt, Gui, Shift, null,Tab,null, Left, Down, Up, Right, null]
+    - [ {h: Ctrl, t: All}, Alt, Gui, Shift, null,Tab,null, Left, Down, Up, Right, null]
     - [ "Undo/Redo", "Cut", "Cpy", "Paste", null, null, null,"Move MSG" , null , null , null , null]
     - [null, null, null,{type: held}, null,  {t: Space, h: Ctrl}, {t: BSpace, h: NUM}, Alt, Ctrl,Shift]
   NUM:
