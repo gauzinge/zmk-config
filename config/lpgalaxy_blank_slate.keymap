@@ -210,7 +210,7 @@ ZMK_LAYER(default,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-           &kp LCTRL      &kp LALT   &mt LGUI LPAR  &lt NAV TAB      XXX    &mt LCTRL RET           &lt SYM SPACE   XXX       &bs_del_num  &mt LALT RPAR   &kp MINUS     &kp PLUS
+           &kp LCTRL      &kp LALT   &mt LGUI LPAR  &lt NAV TAB      XXX    &mt LCTRL RET           &lt SYM SPACE   XXX       &bs_del_num  &mt LALT RPAR   &kp MINUS     &kp EQAL 
      // ╰─────────────┴─────────────┴─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
 )
 
