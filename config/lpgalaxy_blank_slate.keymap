@@ -10,8 +10,8 @@
 #include <dt-bindings/zmk/bt.h>
 #define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
 
-#include "zmk-helpers/key-labels/48.h"
-#include "zmk-helpers/unicode_chars/german.dtsi"
+#include "zmk-helpers/key-labels/4x12.h"
+#include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define DEF 0
 #define COL 1
