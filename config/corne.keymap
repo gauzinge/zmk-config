@@ -45,6 +45,7 @@
 #define UDO LC(Z)
 #define RDO LS(LC(Z))
 #define MOVE_MSG &kp LS(LC(V))
+#define NEW_TAB &kp LC(T)
 
 
 /*#include "combos.dtsi"  // requires layer aliases*/
@@ -230,9 +231,9 @@ ZMK_LAYER(colemak,
 
 ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             XXX             XXX       &dsk_cycle     APP_SWAP     TAB_SWAP         XXX            &copy_cut      &udo_rdo         XXX           XXX        &kp PST         XXX
+             XXX             XXX       &dsk_cycle     APP_SWAP     TAB_SWAP       NEW_TAB            &copy_cut      &udo_rdo         XXX           XXX        &kp PST         XXX
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             XXX      &mt LCTRL LC(A)    &kp LALT    &kp LGUI     &kp LSHFT         XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
+             XXX      &mt LCTRL LC(A)    &kp LALT    &kp LGUI      NEW_TAB         XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              XXX          &udo_rdo       &kp CT      &kp CP        &kp PST          XXX            MOVE_MSG       XXX            XXX           XXX           XXX            XXX
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤

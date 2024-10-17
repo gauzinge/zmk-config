@@ -35,6 +35,7 @@
 //#define UDO LG(Z)
 //#define RDO LS(LG(Z))
 //#define MOVE_MSG &kp LS(LG(M))
+//#define NEW_TAB &kp LG(T)
 
 //WIN
 #define PREV_DSK &kp LC(LG(LEFT))
@@ -45,6 +46,7 @@
 #define UDO LC(Z)
 #define RDO LS(LC(Z))
 #define MOVE_MSG &kp LS(LC(V))
+#define NEW_TAB &kp LC(T)
 
 
 /*#include "combos.dtsi"  // requires layer aliases*/
@@ -231,11 +233,11 @@ ZMK_LAYER(colemak,
 
 ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             ___             XXX       &dsk_cycle    APP_SWAP      TAB_SWAP         XXX            &copy_cut      &udo_rdo         XXX           XXX        &kp PST         ___ 
+             ___             XXX       &dsk_cycle    APP_SWAP      TAB_SWAP       NEW_TAB            &copy_cut      &udo_rdo         XXX           XXX        &kp PST         ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             ___      &mt LCTRL LC(A)   &kp LALT     &kp LGUI     &kp LSHFT         XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
+             ___      &mt LCTRL LC(A)   &kp LALT     &kp LGUI       NEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             ___          &udo_rdo       &kp CT      &kp CP        &kp PST          XXX            MOVE_MSG       XXX            XXX           XXX            XXX            ___ 
+             ___         &udo_rdo       &kp CT      &kp CP        &kp PST          XXX            MOVE_MSG       XXX            XXX           XXX            XXX            ___ 
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              ___             XXX          XXX            XXX            XXX      XXX               &mt LCTRL SPACE   XXX        &mo NUM        XXX            XXX      &kp LG(SPACE)
      // ╰─────────────┴─────────────┴─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
