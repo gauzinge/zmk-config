@@ -32,6 +32,7 @@
 #define CP LG(C)
 #define CT LG(X)
 #define PST LG(V)
+#define UDO LG(Z)
 #define RDO LS(LG(Z))
 #define MOVE_MSG &kp LS(LG(M))
 #define NEW_TAB &kp LG(T)
