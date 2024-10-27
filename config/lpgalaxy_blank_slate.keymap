@@ -13,6 +13,8 @@
 #include "zmk-helpers/key-labels/4x12.h"
 #include "zmk-helpers/unicode-chars/german.dtsi"
 
+#define TBLE_DUAL_2U
+
 #define DEF 0
 #define WDEF 1
 #define COL 2
