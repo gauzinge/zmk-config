@@ -14,12 +14,14 @@
 #include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define DEF 0
-#define COL 1
-#define NAV 2
-#define NUM 3
-#define SYM 4
-#define SYS 5
-#define LAN 6
+#define WDEF 1
+#define COL 2
+#define NAV 3
+#define WNAV 4
+#define NUM 5
+#define SYM 6
+#define SYS 7
+#define LAN 8
 
 #define TAB_SWAP &tab
 #define TAB_BK &tab_bk
@@ -38,15 +40,15 @@
 #define NEW_TAB &kp LG(T)
 
 //WIN
-//#define PREV_DSK &kp LC(LG(LEFT))
-//#define NEXT_DSK &kp LC(LG(RIGHT))
-//#define CP LC(C)
-//#define CT LC(X)
-//#define PST LC(V)
-//#define UDO LC(Z)
-//#define RDO LS(LC(Z))
-//#define MOVE_MSG &kp LS(LC(V))
-//#define NEW_TAB &kp LC(T)
+#define WPREV_DSK &kp LC(LG(LEFT))
+#define WNEXT_DSK &kp LC(LG(RIGHT))
+#define WCP LC(C)
+#define WCT LC(X)
+#define WPST LC(V)
+#define WUDO LC(Z)
+#define WRDO LS(LC(Z))
+#define WMOVE_MSG &kp LS(LC(V))
+#define WNEW_TAB &kp LC(T)
 
 
 /*#include "combos.dtsi"  // requires layer aliases*/
@@ -189,6 +191,20 @@ ZMK_BEHAVIOR(udo_rdo, tap_dance,
     bindings = <&kp UDO>, <&kp RDO>;
 )
 
+ZMK_BEHAVIOR(wdsk_cycle, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <WNEXT_DSK>, <WPREV_DSK>;
+)
+
+ZMK_BEHAVIOR(wcopy_cut, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp WCP>, <&kp WCT>;
+)
+
+ZMK_BEHAVIOR(wudo_rdo, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp WUDO>, <&kp WRDO>;
+)
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
 ZMK_COMBO(combo_copy,   &kp LG(C),  LB3 LB4, ALL)  // Ctrl + C, active on all layers
@@ -205,6 +221,7 @@ ZMK_COMBO(combo_capsword,  &caps_word,  LM1 RM1, ALL)  // capsword, both hrm shi
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(system, NAV NUM, SYS)  // NAV + SYM --> SYS
+ZMK_CONDITIONAL_LAYER(system, WNAV NUM, SYS)  // NAV + SYM --> SYS
 
 ZMK_LAYER(default,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
@@ -215,6 +232,18 @@ ZMK_LAYER(default,
           &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
            &kp LCTRL      &kp LALT   &mt LGUI LPAR  &lt NAV TAB      XXX    &mt LCTRL RET           &lt SYM SPACE   XXX       &bs_del_num  &mt LALT RPAR   &kp MINUS     &kp EQUAL 
+     // ╰─────────────┴─────────────┴─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
+)
+
+ZMK_LAYER(wdef,
+     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+            &kp ESC        &kp Q         &kp W         &kp E         &kp R        &kp T              &kp Y         &kp U         &kp I         &kp O         &kp P       &bs_del
+     // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+            &kp TAB     &hml LCTRL A   &hml LALT S    &kp D        &hml LSHFT F   &kp G              &kp H      &hmr RSHFT J     &kp K      &hmr LALT L &hmr LCTRL SEMI &lt LAN SQT
+     // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
+     // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+           &kp LCTRL      &kp LALT   &mt LGUI LPAR  &lt WNAV TAB      XXX   &mt LCTRL RET           &lt SYM SPACE   XXX       &bs_del_num  &mt LALT RPAR   &kp MINUS     &kp EQUAL 
      // ╰─────────────┴─────────────┴─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
 )
 
@@ -235,9 +264,21 @@ ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
              ___             XXX       &dsk_cycle    APP_SWAP      TAB_SWAP       NEW_TAB            &copy_cut      &udo_rdo         XXX           XXX        &kp PST         ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             ___      &mt LCTRL LC(A)   &kp LALT     &kp LGUI       NEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
+             ___      &mt LCTRL LG(A)   &kp LALT     &kp LGUI       NEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              ___         &udo_rdo       &kp CT      &kp CP        &kp PST          XXX            MOVE_MSG       XXX            XXX           XXX            XXX            ___ 
+     // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             ___             XXX          XXX            XXX            XXX      XXX               &mt LCTRL SPACE   XXX        &mo NUM        XXX            XXX      &kp LG(SPACE)
+     // ╰─────────────┴─────────────┴─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
+)
+
+ZMK_LAYER(wnav,
+     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+             ___             XXX       &wdsk_cycle    APP_SWAP      TAB_SWAP       NEW_TAB       &wcopy_cut      &wudo_rdo         XXX           XXX        &kp WPST         ___ 
+     // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             ___      &mt LCTRL LC(A)   &kp LALT     &kp LGUI       WNEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
+     // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             ___         &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX             WMOVE_MSG       XXX            XXX           XXX            XXX            ___ 
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              ___             XXX          XXX            XXX            XXX      XXX               &mt LCTRL SPACE   XXX        &mo NUM        XXX            XXX      &kp LG(SPACE)
      // ╰─────────────┴─────────────┴─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
@@ -287,6 +328,6 @@ ZMK_LAYER(lan,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft      XXX            XXX          XXX           XXX           XXX               XXX           XXX         &kp COMMA      &kp DOT       &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-              XXX            XXX         XXX            XXX          XXX           XXX               XXX           XXX           XXX           XXX          &to DEF        &to COL 
+              XXX            XXX         XXX            XXX          XXX           XXX               XXX           XXX           XXX           &to DEF      &to WDEF       &to COL 
      // ╰─────────────┴─────────────┴─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
 )
