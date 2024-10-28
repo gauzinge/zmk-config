@@ -2,6 +2,7 @@
 #include "zmk-helpers/key-labels/4x12.h"
 
 #define TBLE_DUAL_2U
+/*
 / {
     chosen {
        zmk,matrix_transform =
@@ -13,6 +14,7 @@
                        &ortho_transform;
 #endif
     };
+*/
 /*
  / {
      chosen {
