@@ -62,24 +62,24 @@
 #define QUICK_TAP_MS 175
 
 &sk {                           // sticky-key config
-  release - after - ms = <900>; // release after 0.6s
-  quick - release;              // no double capitalization when rolling keys
+  release-after-ms = <900>; // release after 0.6s
+  quick-release;              // no double capitalization when rolling keys
 };
 
 &sl {                 // sticky-layer config
-  ignore - modifiers; // allow chording sticky mods & layers
+  ignore-modifiers; // allow chording sticky mods & layers
 };
 
 &lt { // layer-tap config
   flavor = "balanced";
-  tapping - term - ms = <200>;
-  quick - tap - ms = <QUICK_TAP_MS>;
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
 };
 
 &mt { // layer-tap config
   flavor = "balanced";
-  tapping - term - ms = <200>;
-  quick - tap - ms = <QUICK_TAP_MS>;
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
 };
 /*custom behaviors*/
 
@@ -98,33 +98,30 @@
 /* left-hand HRMs */
 ZMK_BEHAVIOR(hml, hold_tap,
              flavor = "balanced";
-             tapping - term - ms = <250>;
-             quick - tap - ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
-             require - prior - idle - ms = <140>; bindings = <&kp>, <&kp>;
-             hold - trigger - key - positions = <KEYS_R THUMBS>;
-             hold - trigger - on -
-             release; // delay positional check until key-release
+             tapping-term-ms = <250>;
+             quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
+             require-prior-idle-ms = <140>; bindings = <&kp>, <&kp>;
+             hold-trigger-key-positions = <KEYS_R THUMBS>;
+             hold-trigger-on-release; // delay positional check until key-release
 )
 /* right-hand HRMs */
 ZMK_BEHAVIOR(hmr, hold_tap,
              flavor = "balanced";
-             tapping - term - ms = <250>;
-             quick - tap - ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
-             require - prior - idle - ms = <140>; bindings = <&kp>, <&kp>;
-             hold - trigger - key - positions = <KEYS_L THUMBS>;
-             hold - trigger - on -
-             release; // delay positional check until key-release
+             tapping-term-ms = <249>;
+             quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
+             require-prior-idle-ms = <140>; bindings = <&kp>, <&kp>;
+             hold-trigger-key-positions = <KEYS_L THUMBS>;
+             hold-trigger-on-release; // delay positional check until key-release
 )
 
 ZMK_BEHAVIOR(hms, hold_tap,
              flavor = "balanced";
-             tapping - term - ms = <250>;
-             quick - tap - ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
-             require - prior - idle - ms = <140>;
+             tapping-term-ms = <250>;
+             quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
+             require-prior-idle-ms = <140>;
              bindings = <&kp>, <&col_semi_inner>;
-             hold - trigger - key - positions = <KEYS_L THUMBS>;
-             hold - trigger - on -
-             release; // delay positional check until key-release
+             hold-trigger-key-positions = <KEYS_L THUMBS>;
+             hold-trigger-on-release; // delay positional check until key-release
 )
 
 // normal: tilde, shift: grave
@@ -144,43 +141,44 @@ ZMK_BEHAVIOR(bs_del, mod_morph, bindings = <&kp BSPC>, <&kp DEL>;
 ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSHFT>, <&caps_word>;
              mods = <(MOD_LSFT)>;)
 &caps_word { // mods deactivate caps-word, requires PR #1451
-  / delete -property / ignore - modifiers;
-  continue - list =
+  / delete-property
+  / ignore-modifiers;
+  continue-list =
       <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z UNDERSCORE MINUS>;
 };
 
 // Alt+Tab swapper, requires PR #1366
 
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-              ignored - key - positions = <LT2>;)
+              ignored-key-positions = <LT2>;)
 ZMK_TRI_STATE(swapper_bk, bindings = <&kt LS(LALT)>, <&kp TAB>, <&kt LS(LALT)>;
-              ignored - key - positions = <LT2>;)
+              ignored-key-positions = <LT2>;)
 
 ZMK_TRI_STATE(tab, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-              ignored - key - positions = <LT2>;)
+              ignored-key-positions = <LT2>;)
 ZMK_TRI_STATE(tab_bk, bindings = <&kt LS(LCTRL)>, <&kp TAB>, <&kt LS(LCTRL)>;
-              ignored - key - positions = <LT2>;)
+              ignored-key-positions = <LT2>;)
 
 // normal: tilde, shift: grave
 ZMK_BEHAVIOR(tilde_grave, mod_morph, bindings = <&kp TILDE>, <&kp GRAVE>;
              mods = <(MOD_LSFT | MOD_RSFT)>;)
 
-ZMK_BEHAVIOR(dsk_cycle, tap_dance, tapping - term - ms = <200>;
+ZMK_BEHAVIOR(dsk_cycle, tap_dance, tapping-term-ms = <200>;
              bindings = <NEXT_DSK>, <PREV_DSK>;)
 
-ZMK_BEHAVIOR(copy_cut, tap_dance, tapping - term - ms = <200>;
+ZMK_BEHAVIOR(copy_cut, tap_dance, tapping-term-ms = <200>;
              bindings = <&kp CP>, <&kp CT>;)
 
-ZMK_BEHAVIOR(udo_rdo, tap_dance, tapping - term - ms = <200>;
+ZMK_BEHAVIOR(udo_rdo, tap_dance, tapping-term-ms = <200>;
              bindings = <&kp UDO>, <&kp RDO>;)
 
-ZMK_BEHAVIOR(wdsk_cycle, tap_dance, tapping - term - ms = <200>;
+ZMK_BEHAVIOR(wdsk_cycle, tap_dance, tapping-term-ms = <200>;
              bindings = <WNEXT_DSK>, <WPREV_DSK>;)
 
-ZMK_BEHAVIOR(wcopy_cut, tap_dance, tapping - term - ms = <200>;
+ZMK_BEHAVIOR(wcopy_cut, tap_dance, tapping-term-ms = <200>;
              bindings = <&kp WCP>, <&kp WCT>;)
 
-ZMK_BEHAVIOR(wudo_rdo, tap_dance, tapping - term - ms = <200>;
+ZMK_BEHAVIOR(wudo_rdo, tap_dance, tapping-term-ms = <200>;
              bindings = <&kp WUDO>, <&kp WRDO>;)
 #undef COMBO_TERM
 #define COMBO_TERM 40 // timeout of 40ms (default is 30ms if omitted)
@@ -248,7 +246,7 @@ ZMK_LAYER(nav,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              ___         &udo_rdo       &kp CT      &kp CP        &kp PST          XXX            MOVE_MSG       XXX            XXX           XXX            XXX            ___ 
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             X_LO            X_LI          XXX            XXX               XXX                         &mt LCTRL SPACE         &mo NUM        XXX            X_RI          X_RO
+             X_LOM         X_LIM          XXX            XXX               XXX                         &mt LCTRL SPACE         &mo NUM        XXX            X_RIM         X_ROM
      // ╰─────────────┴────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────┴─────────────╯
 )
 
@@ -260,7 +258,7 @@ ZMK_LAYER(wnav,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              ___         &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX             WMOVE_MSG       XXX            XXX           XXX            XXX            ___ 
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             X_LO            X_LI          XXX            XXX               XXX                       &mt LCTRL SPACE           &mo NUM        XXX            X_RI          X_RO
+             X_LOW         X_LIW          XXX            XXX               XXX                       &mt LCTRL SPACE           &mo NUM        XXX            X_RIW         X_ROW
      // ╰─────────────┴────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────┴─────────────╯
 )
 
