@@ -6,6 +6,7 @@
 
     chosen {
        zmk,matrix_transform =
+#ifdef TBLE_DUAL_2U
                        &dual_2u_transform;
 #elif defined(TBLE_MIT)
                        &mit_transform;
