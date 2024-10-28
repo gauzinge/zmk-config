@@ -16,6 +16,6 @@ manifest:
       revision: main
     - name: blank-slate-zmk-module
       remote: petejohanson
-      revision: main
+      revision: soft-off-from-main
   self:
     path: config
