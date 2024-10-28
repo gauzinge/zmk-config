@@ -141,10 +141,8 @@ ZMK_BEHAVIOR(bs_del, mod_morph, bindings = <&kp BSPC>, <&kp DEL>;
 ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSHFT>, <&caps_word>;
              mods = <(MOD_LSFT)>;)
 &caps_word { // mods deactivate caps-word, requires PR #1451
-  / delete-property
-  / ignore-modifiers;
-  continue-list =
-      <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z UNDERSCORE MINUS>;
+  /delete-property/ ignore-modifiers;
+  continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z UNDERSCORE MINUS>;
 };
 
 // Alt+Tab swapper, requires PR #1366
