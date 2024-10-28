@@ -2,11 +2,10 @@
 #include "zmk-helpers/key-labels/4x12.h"
 
 #define TBLE_DUAL_2U
-/*
-/ {
+
+
     chosen {
        zmk,matrix_transform =
-#ifdef TBLE_DUAL_2U
                        &dual_2u_transform;
 #elif defined(TBLE_MIT)
                        &mit_transform;
@@ -14,7 +13,7 @@
                        &ortho_transform;
 #endif
     };
-*/
+
 /*
  / {
      chosen {
