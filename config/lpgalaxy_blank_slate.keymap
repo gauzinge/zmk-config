@@ -4,15 +4,26 @@
 #define TBLE_DUAL_2U
 / {
     chosen {
-       zmk,physical-layout =
+       zmk,matrix_transform =
 #ifdef TBLE_DUAL_2U
-                       &layout_ortho_4x12_2x2u;
+                       &dual_2u_transform;
 #elif defined(TBLE_MIT)
-                       &layout_ortho_4x12_1x2u;
+                       &mit_transform;
 #else
-                       &layout_ortho_4x12_all1u;
+                       &ortho_transform;
 #endif
     };
+# / {
+#     chosen {
+#        zmk,physical-layout =
+# #ifdef TBLE_DUAL_2U
+#                        &layout_ortho_4x12_2x2u;
+# #elif defined(TBLE_MIT)
+#                        &layout_ortho_4x12_1x2u;
+# #else
+#                        &layout_ortho_4x12_all1u;
+# #endif
+#     };
 
 /*map Blank Slate's extra keys */
 #define X_LOD &kp LCTRL
@@ -30,9 +41,9 @@
 #define X_RIW &none
 #define X_ROW &kp LG(TAB)
 
-#define X_LOW &none
-#define X_LIW &none
-#define X_RIW &none
-#define X_ROW &none
+#define X_LO &none
+#define X_LI &none
+#define X_RI &none
+#define X_RO &none
 
-#include "baMe.keymap"
+#include "base.keymap"
