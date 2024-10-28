@@ -1,0 +1,3 @@
+[submodule "blank-slate-zmk-module"]
+	path = blank-slate-zmk-module
+	url = https://github.com/petejohanson/blank-slate-zmk-module.git
