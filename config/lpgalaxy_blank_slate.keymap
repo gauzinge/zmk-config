@@ -4,6 +4,7 @@
 #define TBLE_DUAL_2U
 
 
+/*
     chosen {
        zmk,matrix_transform =
 #ifdef TBLE_DUAL_2U
@@ -15,7 +16,6 @@
 #endif
     };
 
-/*
  / {
      chosen {
         zmk,physical-layout =
@@ -51,3 +51,5 @@
 #define X_RO &none
 
 #include "base.keymap"
+
+ZMK_APPLY_MATRIX_TRANSFORM(dual_2u_transform)
