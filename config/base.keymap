@@ -89,7 +89,7 @@
 #define KEYS_R                                                                 \
   RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4          \
       RM5 // right hand
-#ifndef BLANK
+#ifndef LH4
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2 // thumbs
 #else
 #define THUMBS LH4 LH3 LH2 LH1 LH0 RH0 RH1 RH2 RH3 RH4 // thumbs
@@ -98,7 +98,7 @@
 /* left-hand HRMs */
 ZMK_BEHAVIOR(hml, hold_tap,
              flavor = "balanced";
-             tapping-term-ms = <200>;
+             tapping-term-ms = <250>;
              quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
              require-prior-idle-ms = <140>; bindings = <&kp>, <&kp>;
              hold-trigger-key-positions = <KEYS_R THUMBS>;
@@ -107,7 +107,7 @@ ZMK_BEHAVIOR(hml, hold_tap,
 /* right-hand HRMs */
 ZMK_BEHAVIOR(hmr, hold_tap,
              flavor = "balanced";
-             tapping-term-ms = <200>;
+             tapping-term-ms = <249>;
              quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
              require-prior-idle-ms = <140>; bindings = <&kp>, <&kp>;
              hold-trigger-key-positions = <KEYS_L THUMBS>;
@@ -228,7 +228,7 @@ ZMK_LAYER(colemak,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
        &mt LS(LGUI) ESC    &kp Q         &kp W         &kp F         &kp P        &kp G              &kp J         &kp L         &kp U         &kp Y       &kp SEMI       &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &mt LS(LALT) TAB &hml LCTRL A   &hml LALT R    &kp S        &hml LSHFT T   &kp D              &kp H      &hmr RSHFT N     &kp E         &kp I      &hmr LCTRL O    &lt LAN SQT
+       &mt LS(LALT) TAB &hml LCTRL A   &hml LALT R    &kp S        &hml LSHFT T   &kp D              &kp H      &hmr RSHFT N     &kp E      &hmr LALT I &hmr LCTRL O    &lt LAN SQT
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B              &kp K        &kp M      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -241,11 +241,11 @@ ZMK_LAYER(mac_nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
              ___             XXX       &dsk_cycle    APP_SWAP      TAB_SWAP       NEW_TAB            &copy_cut      &udo_rdo         XXX           XXX        &kp PST         ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             ___      &mt LCTRL LG(A)   &kp LALT     &kp LGUI       NEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
+             ___      &mt LCTRL LG(A) &kp LG(LS(N4)) &kp LGUI       NEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              ___         &udo_rdo       &kp CT      &kp CP        &kp PST          XXX              MOVE_MSG       XXX            XXX           XXX            XXX            ___ 
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             X_LOM         X_LIM          XXX            XXX               XXX                         &mt LCTRL SPACE            XXX          XXX            X_RIM         X_ROM
+             X_LOM         X_LIM          XXX            XXX               XXX                         &mt LCTRL SPACE            XXX        &kp LALT         X_RIM         X_ROM
      // ╰─────────────┴────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────┴─────────────╯
 )
 
@@ -253,11 +253,11 @@ ZMK_LAYER(win_nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
              ___             XXX       &wdsk_cycle    APP_SWAP      TAB_SWAP       NEW_TAB       &wcopy_cut      &wudo_rdo         XXX           XXX        &kp WPST         ___ 
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             ___      &mt LCTRL LC(A)   &kp LALT     &kp LGUI       WNEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
+             ___      &mt LCTRL LC(A) &kp LG(LS(S))  &kp LGUI       WNEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX           XXX
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              ___         &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX             WMOVE_MSG       XXX            XXX           XXX            XXX            ___ 
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             X_LOW         X_LIW          XXX            XXX               XXX                       &mt LCTRL SPACE              XXX        XXX            X_RIW         X_ROW
+             X_LOW         X_LIW          XXX            XXX               XXX                       &mt LCTRL SPACE              XXX        &kp LALT        X_RIW         X_ROW
      // ╰─────────────┴────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────┴─────────────╯
 )
 
