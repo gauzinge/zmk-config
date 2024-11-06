@@ -1,9 +1,10 @@
 parse_config:
-  zmk_preamble: "#include <zmk-helpers/key-labels/34.h>"
+  zmk_preamble: "#include <zmk-helpers/helper.h>"
+  # zmk_preamble: "#include <zmk-helpers/key-labels/42.h>"
   # zmk_preamble: "#include <zmk-helpers/key-labels/4x12.h>"
   zmk_additional_includes:
     - "modules/helpers/include"
 
 draw_config:
-  footer_text: "urob/zmk-config"
+  footer_text: "gauzinge/zmk-config"
   dark_mode: auto
