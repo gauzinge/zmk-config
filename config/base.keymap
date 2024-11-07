@@ -195,6 +195,8 @@ ZMK_COMBO(combo_capsword, &caps_word, LB5 RB5,
           ALL) // capsword, both shifts, all layers
 ZMK_COMBO(combo_capsword, &caps_word, LM1 RM1,
           ALL) // capsword, both hrm shifts, all layers
+ZMK_COMBO(combo_volup, &kp C_VOL_UP, RT4 RT5, ALL)
+ZMK_COMBO(combo_voldn, &kp C_VOL_DN, LT5 LT4, ALL)
 
 /* Keymap */
 
