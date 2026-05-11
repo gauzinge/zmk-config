@@ -10,11 +10,11 @@ manifest:
     - name: zmk
       #remote: urob
       remote: zmkfirmware
-      revision: main
+      revision: v0.3
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: v0.3
     - name: blank-slate-zmk-module
       remote: petejohanson
       revision: soft-off-from-main
