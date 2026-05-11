@@ -18,5 +18,9 @@ manifest:
     - name: blank-slate-zmk-module
       remote: petejohanson
       revision: soft-off-from-main
+      # Add this project entry:
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: main
   self:
     path: config
