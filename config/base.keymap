@@ -38,8 +38,8 @@
 #define NEW_TAB &kp LG(T)
 
 // WIN
-#define WPREV_DSK &kp LC(LG(LEFT))
-#define WNEXT_DSK &kp LC(LG(RIGHT))
+#define WPREV_DSK &kp LG(COMMA)
+#define WNEXT_DSK &kp LG(DOT)
 #define WCP LC(C)
 #define WCT LC(X)
 #define WPST LC(V)
@@ -47,6 +47,7 @@
 #define WRDO LS(LC(Z))
 #define WMOVE_MSG &kp LS(LC(V))
 #define WNEW_TAB &kp LC(T)
+
 
 /*#include "combos.dtsi"  // requires layer aliases*/
 /*#include "extra_keys.h"*/
@@ -221,7 +222,7 @@ ZMK_LAYER(win_def,
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-           X_LOD           X_LID       &mt LCTRL LPAR  &lt WNAV TAB     &mt LCTRL RET                   &lt SYM SPACE         &bs_del_num  &mt LALT RPAR      X_RID        X_ROD
+           X_LOD           X_LID     &mt LCTRL LPAR  &lt WNAV TAB     &mt LALT RET                   &lt SYM SPACE         &bs_del_num  &mt LALT RPAR      X_RID        X_ROD
      // ╰─────────────┴────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────┴─────────────╯
 )
 
@@ -256,7 +257,7 @@ ZMK_LAYER(win_nav,
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
              ___     &mt LCTRL LC(A) &kp LG(LS(S))  &kp LGUI       WNEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX            XXX     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-             ___        &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX             WMOVE_MSG       XXX            XXX           XXX            XXX          ___     
+             ___        &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX             WMOVE_MSG       XXX          WPREV_DSK   WNEXT_DSK        XXX            ___     
      //╰───────────┤ ╰─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┤ ╰───────────┤
             X_LOW        X_LIW            XXX            XXX               XXX                       &mt LCTRL SPACE              XXX        &kp LALT        X_RIW          X_ROW    
      //╰───────────╯ ╰────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────╯ ╰───────────╯
