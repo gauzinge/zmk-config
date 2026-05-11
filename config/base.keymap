@@ -147,13 +147,13 @@ ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSHFT>, <&caps_word>;
 
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2>;)
-ZMK_TRI_STATE(swapper_bk, bindings = <&kt LS(LALT)>, <&kp TAB>, <&kt LS(LALT)>;
-              ignored-key-positions = <LT2>;)
+//ZMK_TRI_STATE(swapper_bk, bindings = <&kt LS(LALT)>, <&kp TAB>, <&kt LS(LALT)>;
+//              ignored-key-positions = <LT2>;)
 
 ZMK_TRI_STATE(tab, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
               ignored-key-positions = <LT2>;)
-ZMK_TRI_STATE(tab_bk, bindings = <&kt LS(LCTRL)>, <&kp TAB>, <&kt LS(LCTRL)>;
-              ignored-key-positions = <LT2>;)
+//ZMK_TRI_STATE(tab_bk, bindings = <&kt LS(LCTRL)>, <&kp TAB>, <&kt LS(LCTRL)>;
+//              ignored-key-positions = <LT2>;)
 
 // normal: tilde, shift: grave
 ZMK_BEHAVIOR(tilde_grave, mod_morph, bindings = <&kp TILDE>, <&kp GRAVE>;
