@@ -12,15 +12,15 @@ manifest:
     - name: zmk
       #remote: urob
       remote: zmkfirmware
-      revision: v0.3
+      revision: main
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
-      revision: v0.3
+      revision: main
     - name: blank-slate-zmk-module
       remote: petejohanson
       #revision: soft-off-from-main
-      revision: v0.3
+      revision: main
       # Add this project entry:
     - name: zmk-tri-state
       remote: dhruvinsh
