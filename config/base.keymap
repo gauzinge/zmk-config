@@ -23,6 +23,8 @@
 #define LAN 7
 #define SYS 8
 
+#define ALL 0 1 2 3 4 5 6 7 8
+
 
 // OSX
 #define PREV_DSK &kp LC(LEFT)
@@ -179,8 +181,8 @@ ZMK_BEHAVIOR(wudo_rdo, tap_dance, tapping-term-ms = <200>;
 
 #undef COMBO_TERM
 #define COMBO_TERM 40 // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(combo_copy, &kp LG(C), &kp LB3 &kp LB4, ALL) // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste, &kp LG(V), &kp LB1 &kp LB2,
+ZMK_COMBO(combo_copy, &kp LG(C), LB3 LB4, ALL) // Ctrl + C, active on all layers
+ZMK_COMBO(combo_paste, &kp LG(V), LB1 LB2,
           ALL)                                 // Ctrl + V, active on all layers
 ZMK_COMBO(combo_tab, &kp TAB, LT3 LT4, ALL)    // esc
 ZMK_COMBO(combo_esc, &kp ESC, RM1 RM2, ALL)    // esc
