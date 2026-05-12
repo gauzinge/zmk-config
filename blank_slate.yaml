@@ -47,8 +47,8 @@ layers:
         H,
         { h: Shift, t: J },
         K,
-        { h: Alt, t: L },
-        { h: Ctrl, t: ":" },
+        L,
+        ":",
         { h: LAN, t: "'" },
       ]
     - [Shift, Z, X, C, V, B, N, M, ",", ., /, Shift]
@@ -67,10 +67,10 @@ layers:
   NAV:
     - [
         null,
-        null,
-        "Dskt",
-        "App nxt",
-        "Tab nxt",
+        "WS 1",
+        "WS 2",
+        "WS 3",
+        "WS 4",
         "NewTab",
         "Cpy/Cut",
         "Undo/Redo",
@@ -80,7 +80,7 @@ layers:
         null,
       ]
     - [
-        null,
+        "Alt Tab",
         "All",
         "ScrSht",
         Gui,
