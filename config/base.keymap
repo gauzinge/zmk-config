@@ -38,8 +38,8 @@
 #define NEW_TAB &kp LG(T)
 
 // WIN
-#define WPREV_DSK &kp LG(COMMA)
-#define WNEXT_DSK &kp LG(DOT)
+#define WPREV_DSK &kp LA(COMMA)
+#define WNEXT_DSK &kp LA(DOT)
 #define WCP LC(C)
 #define WCT LC(X)
 #define WPST LC(V)
@@ -254,7 +254,7 @@ ZMK_LAYER(mac_nav,
 
 ZMK_LAYER(win_nav,
      //╭───────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭───────────╮
-             ___       &kp LG(N1)      &kp LG(N2)   &kp LG(N3)   &kp LG(N4)      NEW_TAB         &wcopy_cut      &wudo_rdo         XXX           XXX        &kp WPST          ___     
+             ___       &kp LA(N1)      &kp LA(N2)   &kp LA(N3)   &kp LA(N4)      NEW_TAB         &wcopy_cut      &wudo_rdo         XXX           XXX        &kp WPST          ___     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
           &swapper     &mt LCTRL LC(A) &kp LG(LS(S))  &kp LGUI       WNEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX            XXX     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
