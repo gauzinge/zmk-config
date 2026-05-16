@@ -1,0 +1,30 @@
+
+#include "zmk-helpers/key-labels/4x12.h"
+
+#define TBLE_DUAL_2U
+#define BLANK
+
+/*map Blank Slate's extra keys */
+#define X_LOD &kp LCTRL
+#define X_LID &kp LGUI
+#define X_RID &mt LGUI MINUS
+#define X_ROD &mt LCTRL EQUAL
+
+#define X_LOM &trans
+#define X_LIM &none
+#define X_RIM &kp LC(DOWN)
+#define X_ROM &kp LC(UP)
+
+#define X_LOW &trans
+#define X_LIW &none
+#define X_RIW &none
+#define X_ROW &kp LG(TAB)
+
+#define X_LO &none
+#define X_LI &none
+#define X_RI &none
+#define X_RO &none
+
+#include "base.keymap"
+
+ZMK_APPLY_MATRIX_TRANSFORM(dual_2u_transform)
