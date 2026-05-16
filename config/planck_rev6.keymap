@@ -27,4 +27,6 @@
 
 #include "base.keymap"
 
-ZMK_APPLY_MATRIX_TRANSFORM(dual_2u_transform)
+#define LH0 &none 
+#define RH1 &none
+//ZMK_APPLY_MATRIX_TRANSFORM(dual_2u_transform)
