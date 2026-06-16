@@ -14,16 +14,14 @@
 #include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define DEF 0
-#define WDEF 1
-#define COL 2
-#define NAV 3
-#define WNAV 4
-#define NUM 5
-#define SYM 6
-#define LAN 7
-#define SYS 8
+#define COL 1
+#define NAV 2
+#define NUM 3
+#define SYM 4
+#define LAN 5
+#define SYS 6
 
-#define ALL 0 1 2 3 4 5 6 7 8
+#define ALL 0 1 2 3 4 5 6
 
 
 // OSX
@@ -34,19 +32,13 @@
 #define PST LG(V)
 #define UDO LG(Z)
 #define RDO LS(LG(Z))
-#define MOVE_MSG &kp LS(LG(M))
-#define NEW_TAB &kp LG(T)
-#define SCREENSHOT &kp LS(LG(4))
 
 // WIN
-#define WPREV_DSK &kp LA(COMMA)
-#define WNEXT_DSK &kp LA(DOT)
 #define WCP LC(C)
 #define WCT LC(X)
 #define WPST LC(V)
 #define WUDO LC(Z)
 #define WRDO LS(LC(Z))
-#define WMOVE_MSG &kp LS(LC(V))
 #define WNEW_TAB &kp LC(T)
 
 
@@ -205,26 +197,13 @@ ZMK_CONDITIONAL_LAYER(system, LAN NUM, SYS)  // NAV + SYM --> SYS
 
 ZMK_LAYER(default,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-       &mt LA(LCTRL) ESC    &kp Q         &kp W         &kp E         &kp R        &kp T              &kp Y         &kp U         &kp I         &kp O         &kp P       &bs_del
-     // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &mt LCTRL TAB   &hml LCTRL A   &hml LALT S  &hml LGUI D   &hml LSHFT F    &kp G              &kp H      &hmr RSHFT J  &hmr RGUI K   &hmr RALT L  &hmr LCTRL SEMI &lt LAN SQT
-     // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
-     // ╰─────────────┼─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-           X_LOD           X_LID       &mt LCTRL LPAR  &lt NAV TAB       &mt LGUI RET                   &lt SYM SPACE         &bs_del_num  &mt LALT RPAR     X_RID          X_ROD 
-     // ╰─────────────┴────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────┴─────────────╯
-)
-
-ZMK_LAYER(win_def,
-     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
             &kp ESC        &kp Q         &kp W         &kp E         &kp R        &kp T              &kp Y         &kp U         &kp I         &kp O         &kp P       &bs_del
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            //&kp TAB     &hml LGUI A  &hml LALT S    &hml LCTRL D  &hml LSHFT F    &kp G              &kp H     &hmr RSHFT J  &hmr RCTRL K   &hmr RALT L  &hmr RGUI SEMI &lt LAN SQT
-         &mt LCTRL TAB     &hml LGUI A  &hml LALT S    &hml LCTRL D  &hml LSHFT F    &kp G              &kp H     &hmr RSHFT J     &kp K        &kp L          &kp SEMI    &lt LAN SQT
+         &mt LCTRL TAB     &kp A         &kp S         &kp D     &hml LSHFT F     &kp G              &kp H      &hmr RSHFT J     &kp K         &kp L        &kp SEMI     &lt LAN SQT
      // ├─────────────┼─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &smart_shft     &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
+          &smart_shft      &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M      &kp COMMA      &kp DOT        &kp FSLH     &smart_shft
      // ╰─────────────┼─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-           X_LOD           X_LID     &mt LCTRL LPAR  &lt WNAV TAB     &mt LALT RET                   &lt SYM SPACE         &bs_del_num  &mt LALT RPAR      X_RID        X_ROD
+           X_LOD           X_LID     &mt LCTRL LPAR  &lt NAV TAB       &mt LALT RET                   &lt SYM SPACE         &bs_del_num  &mt LALT RPAR      X_RID        X_ROD
      // ╰─────────────┴────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────┴─────────────╯
 )
 
@@ -241,25 +220,14 @@ ZMK_LAYER(colemak,
 )
 
 
-ZMK_LAYER(mac_nav,
-     //╭───────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭───────────╮
-             ___           XXX       &dsk_cycle      &swapper        &tab       NEW_TAB            &copy_cut    &kp LC(U)         XXX           XXX        &kp PST         ___     
-     //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-             ___       &kp LC(A)    &kp LS(LA(N4))  &kp LC(D)         NEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX             XXX     
-     //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-             ___        &udo_rdo       &kp CT      &kp CP        &kp PST          XXX              MOVE_MSG       XXX            XXX           XXX            XXX           ___     
-     //╰───────────┤ ╰─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┤ ╰───────────┤
-            X_LOM        X_LIM          XXX            XXX                XXX                         &mt LCTRL SPACE            XXX        &kp LALT         X_RIM          X_ROM   
-     //╰───────────╯ ╰────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────╯ ╰───────────╯
-)
 
-ZMK_LAYER(win_nav,
+ZMK_LAYER(nav,
      //╭───────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭───────────╮
-             ___       &kp LA(N1)      &kp LA(N2)   &kp LA(N3)   &kp LA(N4)      NEW_TAB         &wcopy_cut      &wudo_rdo         XXX           XXX        &kp WPST          ___     
+             ___       &kp LA(N1)      &kp LA(N2)   &kp LA(N3)   &kp LA(N4)      WNEW_TAB         &wcopy_cut      &LC(U)          XXX           XXX        &kp WPST          ___     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-          &swapper      &kp LC(A)  &kp LS(LA(N4))     XXX         WNEW_TAB        XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX            XXX     
+          &swapper      &kp LC(A)  &kp LS(LA(N4))    &kp LC(D)       XXX           XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX            XXX     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-             ___        &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX             WMOVE_MSG       XXX          WPREV_DSK   WNEXT_DSK        XXX            ___     
+            &tab        &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX             WMOVE_MSG       XXX          WPREV_DSK   WNEXT_DSK        XXX            ___     
      //╰───────────┤ ╰─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┤ ╰───────────┤
             X_LOW        X_LIW            XXX            XXX               XXX                       &mt LCTRL SPACE              XXX        &kp LALT        X_RIW          X_ROW    
      //╰───────────╯ ╰────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────╯ ╰───────────╯
@@ -293,9 +261,9 @@ ZMK_LAYER(lan,
      //╭───────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬────────────╮   ╭─────────────┬──────────────┬─────────────┬─────────────┬─────────────╮ ╭───────────╮
          &kp GRAVE        XXX            XXX         &kp RA(E)       XXX           XXX              XXX          &kp RA(Y)       XXX         &kp RA(P)       XXX            ___    
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-             XXX       &kp RA(Q)   &kp RA(S)        XXX           XXX           XXX               XXX           XXX           XXX           XXX           XXX               XXX     
+             XXX       &kp RA(Q)   &kp RA(S)        XXX           XXX           XXX               XXX           XXX           XXX             XXX           XXX             XXX     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-             ___          XXX            XXX          XXX           XXX           XXX               XXX           XXX         &to DEF      &to WDEF       &to COL           ___     
+             ___          XXX            XXX          XXX           XXX           XXX               XXX           XXX         &to DEF        &to COL         XXX           ___     
      //╰───────────┤ ╰─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┤ ╰───────────┤
             X_LO          X_LI           XXX          XXX                 XXX                              XXX                &mo NUM         XXX           X_RI            X_RO    
      //╰───────────╯ ╰────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────╯ ╰───────────╯
