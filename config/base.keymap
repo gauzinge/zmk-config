@@ -155,17 +155,11 @@ ZMK_TRI_STATE(tab, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
 ZMK_BEHAVIOR(tilde_grave, mod_morph, bindings = <&kp TILDE>, <&kp GRAVE>;
              mods = <(MOD_LSFT | MOD_RSFT)>;)
 
-ZMK_BEHAVIOR(dsk_cycle, tap_dance, tapping-term-ms = <200>;
-             bindings = <NEXT_DSK>, <PREV_DSK>;)
-
 ZMK_BEHAVIOR(copy_cut, tap_dance, tapping-term-ms = <200>;
              bindings = <&kp CP>, <&kp CT>;)
 
 ZMK_BEHAVIOR(udo_rdo, tap_dance, tapping-term-ms = <200>;
              bindings = <&kp UDO>, <&kp RDO>;)
-
-ZMK_BEHAVIOR(wdsk_cycle, tap_dance, tapping-term-ms = <200>;
-             bindings = <WNEXT_DSK>, <WPREV_DSK>;)
 
 ZMK_BEHAVIOR(wcopy_cut, tap_dance, tapping-term-ms = <200>;
              bindings = <&kp WCP>, <&kp WCT>;)
