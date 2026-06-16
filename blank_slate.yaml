@@ -9,38 +9,9 @@ layers:
   DEF:
     - [Esc, Q, W, E, R, T, Y, U, I, O, P, Bsp]
     - [
-        Tab,
-        { h: Ctrl, t: A },
-        { h: Alt, t: S },
-        D,
-        { h: Shift, t: F },
-        G,
-        H,
-        { h: Shift, t: J },
-        K,
-        { h: Alt, t: L },
-        { h: Ctrl, t: ":" },
-        { h: LAN, t: "'" },
-      ]
-    - [Shift, Z, X, C, V, B, N, M, ",", ., /, Shift]
-    - [
-        Ctrl,
-        Alt,
-        { h: Ctrl, t: ( },
-        { h: NAV, t: Tab },
-        { h: Cmd, t: Enter },
-        { h: SYM, t: Space },
-        { h: NUM, t: BSpace },
-        { h: Alt, t: ) },
-        { h: Cmd, t: "-" },
-        { h: Ctrl, t: "+" },
-      ]
-  NIX:
-    - [Esc, Q, W, E, R, T, Y, U, I, O, P, Bsp]
-    - [
-        Tab,
-        { h: Ctrl, t: A },
-        { h: Alt, t: S },
+        {h: Ctrl, t: Tab},
+        A,
+        S,
         D,
         { h: Shift, t: F },
         G,
@@ -73,7 +44,7 @@ layers:
         "WS 4",
         "NewTab",
         "Cpy/Cut",
-        "Undo/Redo",
+        "Scrl Up",
         null,
         null,
         Paste,
@@ -83,8 +54,8 @@ layers:
         "Alt Tab",
         "All",
         "ScrSht",
-        Gui,
-        "NewTab",
+        "Scrl Down",
+        null,
         null,
         Left,
         Down,
@@ -94,7 +65,7 @@ layers:
         null,
       ]
     - [
-        null,
+        "Ctrl Tab",
         "Undo/Redo",
         "Cut",
         "Cpy",
@@ -189,18 +160,18 @@ layers:
         null,
         { type: held },
       ]
-    - [Shift, null, null, null, null, null, null, null, DEF, NIX, COL, Shift]
+    - [Shift, null, null, null, null, null, null, null, DEF, COL, null, Shift]
     - [null, null, null, null, null, null, "NUM", null, null, null]
 
 combos:
-  - { p: [1, 2], k: Tab, l: ["DEF", "NIX"] }
-  - { p: [9, 10], k: Bsp, l: ["DEF", "NIX"] }
-  - { p: [19, 20], k: Esc, l: ["DEF", "NIX"] }
-  - { p: [16, 19], k: "caps_word", l: ["DEF", "NIX"] }
-  - { p: [21, 22], k: "'", l: ["DEF", "NIX"] }
-  - { p: [4, 7], k: "-", l: ["DEF", "NIX"] }
-  - { p: [28, 31], k: "_", l: ["DEF", "NIX"] }
-  - { p: [25, 26], k: "copy", l: ["DEF", "NIX"] }
-  - { p: [27, 28], k: "paste", l: ["DEF", "NIX"] }
-  - { p: [10, 11], k: "VolUp", l: ["DEF", "NIX"] }
-  - { p: [0, 1], k: "VolDown", l: ["DEF", "NIX"] }
+  - { p: [1, 2], k: Tab, l: ["DEF"] }
+  - { p: [9, 10], k: Bsp, l: ["DEF"] }
+  - { p: [19, 20], k: Esc, l: ["DEF"] }
+  - { p: [16, 19], k: "caps_word", l: ["DEF"] }
+  - { p: [21, 22], k: "'", l: ["DEF"] }
+  - { p: [4, 7], k: "-", l: ["DEF"] }
+  - { p: [28, 31], k: "_", l: ["DEF"] }
+  - { p: [25, 26], k: "copy", l: ["DEF"] }
+  - { p: [27, 28], k: "paste", l: ["DEF"] }
+  - { p: [10, 11], k: "VolUp", l: ["DEF"] }
+  - { p: [0, 1], k: "VolDown", l: ["DEF"] }
