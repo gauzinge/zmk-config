@@ -21,7 +21,7 @@
 #define LAN 5
 #define SYS 6
 
-#define ALL 0 1 2 3 4 5 6
+#define MYALL 0 1 2 3 4 5 6
 
 
 // OSX
@@ -175,21 +175,21 @@ ZMK_BEHAVIOR(wudo_rdo, tap_dance, tapping-term-ms = <200>;
 
 #undef COMBO_TERM
 #define COMBO_TERM 40 // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(combo_copy, &kp LG(C), LB3 LB4, ALL) // Ctrl + C, active on all layers
+ZMK_COMBO(combo_copy, &kp LG(C), LB3 LB4, MYALL) // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste, &kp LG(V), LB1 LB2,
-          ALL)                                 // Ctrl + V, active on all layers
-ZMK_COMBO(combo_tab, &kp TAB, LT3 LT4, ALL)    // esc
-ZMK_COMBO(combo_esc, &kp ESC, RM1 RM2, ALL)    // esc
-ZMK_COMBO(combo_bsp, &kp BSPC, RT3 RT4, ALL)   // backspace
+          MYALL)                                 // Ctrl + V, active on all layers
+ZMK_COMBO(combo_tab, &kp TAB, LT3 LT4, MYALL)    // esc
+ZMK_COMBO(combo_esc, &kp ESC, RM1 RM2, MYALL)    // esc
+ZMK_COMBO(combo_bsp, &kp BSPC, RT3 RT4, MYALL)   // backspace
 ZMK_COMBO(combo_quotes, &kp SQT, RM3 RM4, DEF) // quotes, only on default
-ZMK_COMBO(combo_sym_minus, &kp MINUS, LT1 RT1, ALL) // minus, all layers
-ZMK_COMBO(combo_sym_under, &kp UNDER, LB1 RB1, ALL) // under, all layers
+ZMK_COMBO(combo_sym_minus, &kp MINUS, LT1 RT1, MYALL) // minus, all layers
+ZMK_COMBO(combo_sym_under, &kp UNDER, LB1 RB1, MYALL) // under, all layers
 ZMK_COMBO(combo_capsword, &caps_word, LB5 RB5,
-          ALL) // capsword, both shifts, all layers
+          MYALL) // capsword, both shifts, all layers
 ZMK_COMBO(combo_capsword, &caps_word, LM1 RM1,
-          ALL) // capsword, both hrm shifts, all layers
-ZMK_COMBO(combo_volup, &kp C_VOL_UP, RT4 RT5, ALL)
-ZMK_COMBO(combo_voldn, &kp C_VOL_DN, LT5 LT4, ALL)
+          MYALL) // capsword, both hrm shifts, all layers
+ZMK_COMBO(combo_volup, &kp C_VOL_UP, RT4 RT5, MYALL)
+ZMK_COMBO(combo_voldn, &kp C_VOL_DN, LT5 LT4, MYALL)
 
 /* Keymap */
 
