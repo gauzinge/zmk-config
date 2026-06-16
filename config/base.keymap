@@ -39,7 +39,7 @@
 #define WPST LC(V)
 #define WUDO LC(Z)
 #define WRDO LS(LC(Z))
-#define WNEW_TAB &kp LC(T)
+#define WNEW_TAB LC(T)
 
 
 /*#include "combos.dtsi"  // requires layer aliases*/
@@ -217,7 +217,7 @@ ZMK_LAYER(colemak,
 
 ZMK_LAYER(nav,
      //╭───────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭───────────╮
-             ___       &kp LA(N1)      &kp LA(N2)   &kp LA(N3)   &kp LA(N4)      WNEW_TAB         &wcopy_cut      &LC(U)          XXX           XXX        &kp WPST          ___     
+             ___       &kp LA(N1)      &kp LA(N2)   &kp LA(N3)   &kp LA(N4)    &kp WNEW_TAB       &wcopy_cut      &LC(U)          XXX           XXX        &kp WPST          ___     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
           &swapper      &kp LC(A)  &kp LS(LA(N4))    &kp LC(D)       XXX           XXX            &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT       XXX            XXX     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
