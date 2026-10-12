@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 #define _BT_SEL_KEYS_                                                          \
   &bt BT_SEL 0 & bt BT_SEL 1 & bt BT_SEL 2 & bt BT_SEL 3 & bt BT_CLR
 
@@ -138,7 +139,7 @@ ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSHFT>, <&caps_word>;
   /delete-property/ ignore-modifiers;
   continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z UNDERSCORE MINUS>;
 };
-
+t's control + D used for?'
 // Alt+Tab swapper, requires PR #1366
 
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
@@ -184,6 +185,7 @@ ZMK_COMBO(combo_capsword, &caps_word, LM1 RM1,
           MYALL) // capsword, both hrm shifts, all layers
 ZMK_COMBO(combo_volup, &kp C_VOL_UP, RT4 RT5, MYALL)
 ZMK_COMBO(combo_voldn, &kp C_VOL_DN, LT5 LT4, MYALL)
+ZMK_COMBO(combo_middlclk, &mkp MCLK, LM3 LM4, NAV)
 
 /* Keymap */
 
@@ -219,9 +221,9 @@ ZMK_LAYER(nav,
      //╭───────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭───────────╮
              ___       &kp LA(N1)      &kp LA(N2)   &kp LA(N3)   &kp LA(N4)    &kp WNEW_TAB       &wcopy_cut    &kp LC(U)          XXX           XXX        &kp WPST        ___     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-          &swapper      &kp LC(A)  &kp LS(LA(N4))    &kp LC(D)       XXX         &kp HOME          &kp LEFT     &kp DOWN       &kp UP        &kp RIGHT      &kp END         XXX     
+          &swapper      &kp LC(A)       &kp F24     &mkp RCLK     &mkp LCLK     &kp HOME          &kp LEFT     &kp DOWN       &kp UP        &kp RIGHT      &kp END         XXX     
      //├───────────┤ ├─────────────┼─────────────┬─────────────┼─────────────┼─────────────┤   ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────┤
-            &tab        &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX               &kp V         XXX      &kp LA(COMMA)   &kp LA(DOT)      XXX            ___     
+      &kp LS(LA(N4))   &wudo_rdo       &kp WCT      &kp WCP        &kp WPST       XXX               &kp V         XXX      &kp LA(COMMA)   &kp LA(DOT)      XXX            ___     
      //╰───────────┤ ╰─────────────┼─────────────┬─────────────┼───────────────────────────┤   ├───────────────────────────┼─────────────┼─────────────┼─────────────┤ ╰───────────┤
             X_LOW        X_LIW            XXX            XXX               XXX                       &mt LCTRL SPACE              XXX        &kp LALT        X_RIW          X_ROW    
      //╰───────────╯ ╰────────────╯╰─────────────┴─────────────┴───────────────────────────╯   ╰───────────────────────────┴─────────────┴─────────────╯╰────────────╯ ╰───────────╯

@@ -6,7 +6,7 @@
 
 /*map Blank Slate's extra keys */
 #define X_LOD &kp LCTRL
-#define X_LID &kp LGUI
+#define X_LID &kp F24
 #define X_RID &mt LGUI MINUS
 #define X_ROD &mt LCTRL EQUAL
 
