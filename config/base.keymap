@@ -139,9 +139,8 @@ ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSHFT>, <&caps_word>;
   /delete-property/ ignore-modifiers;
   continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z UNDERSCORE MINUS>;
 };
-t's control + D used for?'
-// Alt+Tab swapper, requires PR #1366
 
+// Alt+Tab swapper, requires PR #1366
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2>;)
 //ZMK_TRI_STATE(swapper_bk, bindings = <&kt LS(LALT)>, <&kp TAB>, <&kt LS(LALT)>;
