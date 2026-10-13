@@ -9,6 +9,11 @@
 /* #include <interfaces/hid-trackball.dtsi> */
 
 / {
+    // 1. Add this chosen block to tell ZMK Studio where the layout is
+    chosen {
+        zmk,physical-layout = &physical_layout_0;
+    };
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <2>;
@@ -16,6 +21,16 @@
         map = <
         RC(0,3) RC(0,2)
         >;
+    };
+
+    // 2. Add this layout wrapper that references your transform mapping
+    physical_layout_0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Trackball Mini v3";
+        transform = <&default_transform>;
+        
+        // Tells ZMK Studio the virtual matrix bounds (2 keys horizontal)
+        kscan = <&kscan0>; 
     };
 
     behaviors {
