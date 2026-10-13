@@ -10,8 +10,8 @@ manifest:
       url-base: https://github.com/dhruvinsh
     # - name: englmaxi
       # url-base: https://gihub.com/englmaxi
-    - name: badjeff
-      url-base: https://github.com/badjeff
+    # - name: badjeff
+      # url-base: https://github.com/badjeff
     - name: ergohaven
       url-base: https://github.com/ergohaven
   projects:
@@ -35,8 +35,8 @@ manifest:
       # remote: englmaxi
       # revision: main
     - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: main
+      remote: ergohaven
+      revision: eh
     - name: ergohaven-zmk
       remote: ergohaven
       revision: main
