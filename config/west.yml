@@ -12,6 +12,8 @@ manifest:
       # url-base: https://gihub.com/englmaxi
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: ergohaven
+      url-base: https://github.com/ergohaven
   projects:
     - name: zmk
       #remote: urob
@@ -35,5 +37,9 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
+    - name: ergohaven-zmk
+      remote: ergohaven
+      revision: main
+      import: config/west.yml
   self:
     path: config
